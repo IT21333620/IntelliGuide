@@ -1,3 +1,41 @@
 <resources>
+    <!-- Login and Registration -->
     <string name="app_name">IntelliGuide</string>
+    <string name="welcome">Welcome to IntelliGuide</string>
+    <string name="login">Login</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="sample_email">Sample@gmail.com</string>
+    <string name="sample_password">**********</string>
+    <string name="signin">Sign In</string>
+    <string name="or">Or</string>
+    <string name="noAccount">Don't have account</string>
+    <string name="singup">Sign Up</string>
+    <string name="user_type">Select your user type</string>
+    <string name="tourist1">Guide your self</string>
+    <string name="tourist2">Discover foods</string>
+    <string name="tourist3">Ensure safety</string>
+    <string name="tourist4">Share Experience</string>
+    <string name="resurent1">Add your Restaurant</string>
+    <string name="resurent2">Add events</string>
+    <string name="resurent3">Add menu</string>
+    <string name="police1">Only for police officers</string>
+    <string name="police2">View ongoing cases</string>
+    <string name="police3">View case location</string>
+    <string name="register">Register</string>
+    <string name="tourist">Tourist</string>
+    <string name="name">Name</string>
+    <string name="name_hint">John</string>
+    <string name="age">Age</string>
+    <string name="age_hint">21</string>
+    <string name="country">Country</string>
+    <string name="country_hint">USA</string>
+    <string name="pass_no">Passport Number</string>
+    <string name="pass_hint">Eu*********</string>
+    <string name="confirm_pass">Confirm Password</string>
+    <string name="contact_no">Contact Number</string>
+    <string name="contact_hint">+94714563778</string>
+    <string name="have_account">Have a Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
