@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "183888707000",
+    "project_id": "intelliguide-4f62d",
+    "storage_bucket": "intelliguide-4f62d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183888707000:android:a4871ecdabf909528b234d",
+        "android_client_info": {
+          "package_name": "com.example.intelliguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183888707000-iuq9ksaqvraem3m3s4jh1dl1gkggl3hc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAorVGG9Q-bcibg67he2n00V4_Wh9NM2tQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183888707000-iuq9ksaqvraem3m3s4jh1dl1gkggl3hc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
