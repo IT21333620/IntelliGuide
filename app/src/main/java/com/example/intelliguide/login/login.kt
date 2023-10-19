@@ -12,6 +12,8 @@ import com.example.intelliguide.MainActivity
 import com.example.intelliguide.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 private lateinit var editTextEmail: EditText
@@ -19,6 +21,7 @@ private lateinit var enterPassword: EditText
 private lateinit var btnregister: TextView
 private lateinit var loSignin: Button
 private lateinit var auth: FirebaseAuth
+private lateinit var dbRef: DatabaseReference
 
 class login : AppCompatActivity() {
 
@@ -76,6 +79,15 @@ class login : AppCompatActivity() {
                             "Authentication Pass.",
                             Toast.LENGTH_SHORT,
                         ).show()
+
+                        val currentUser = FirebaseAuth.getInstance().currentUser
+                        val userId = currentUser?.uid ?: ""
+
+                        val query = FirebaseDatabase.getInstance().getReference("userModel")
+                            .orderByChild("userId")
+                            .equalTo(userId)
+
+
 
                         val intent = Intent(this@login, MainActivity::class.java)
                         startActivity(intent)
