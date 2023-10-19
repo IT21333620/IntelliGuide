@@ -9,7 +9,7 @@
     <string name="sample_password">**********</string>
     <string name="signin">Sign In</string>
     <string name="or">Or</string>
-    <string name="noAccount">Don't have account</string>
+    <string name="noAccount">Don\'t have account</string>
     <string name="singup">Sign Up</string>
     <string name="user_type">Select your user type</string>
     <string name="tourist1">Guide your self</string>
