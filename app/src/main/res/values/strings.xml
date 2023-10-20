@@ -36,10 +36,17 @@
     <string name="contact_no">Contact Number</string>
     <string name="contact_hint">+94714563778</string>
     <string name="have_account">Have a Account</string>
-    <string name="HotelOwnerRegTitle">Have a Account</string>
+    <string name="HotelOwnerRegTitle">Hotel Owner</string>
+    <string name="TPoliceRegTitle">Tourist Police</string>
 
     <!--Hotel Owner-->
     <string name="HotelOwnerAdSuccess">Ad Successfully Added</string>
+
+    <!--Tourist Police-->
+    <string name="TPoliceId">Police ID</string>
+    <string name="TPoliceStation">Allocated Station</string>
+    <string name="TPoliceIdHint">XXXXXXXXX</string>
+    <string name="TPoliceStationHint">Allocated Station</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
