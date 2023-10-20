@@ -13,6 +13,9 @@
         android:theme="@style/Theme.IntelliGuide"
         tools:targetApi="31">
         <activity
+            android:name=".login.TouristPoliceReg"
+            android:exported="false" />
+        <activity
             android:name=".hotelOwner.AdSuccess"
             android:exported="false" />
         <activity
