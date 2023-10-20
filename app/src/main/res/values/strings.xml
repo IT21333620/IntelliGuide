@@ -9,7 +9,7 @@
     <string name="sample_password">**********</string>
     <string name="signin">Sign In</string>
     <string name="or">Or</string>
-    <string name="noAccount">Don\'t have account</string>
+    <string name="noAccount">No account?</string>
     <string name="singup">Sign Up</string>
     <string name="user_type">Select your user type</string>
     <string name="tourist1">Guide your self</string>
@@ -36,6 +36,10 @@
     <string name="contact_no">Contact Number</string>
     <string name="contact_hint">+94714563778</string>
     <string name="have_account">Have a Account</string>
+    <string name="HotelOwnerRegTitle">Have a Account</string>
+
+    <!--Hotel Owner-->
+    <string name="HotelOwnerAdSuccess">Ad Successfully Added</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
