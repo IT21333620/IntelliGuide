@@ -79,7 +79,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/TourRegName"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -103,10 +103,10 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegName" />
 
             <EditText
-                android:id="@+id/editTextText4"
+                android:id="@+id/TourRegAge"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -114,7 +114,7 @@
                 android:background="@drawable/form_squre"
                 android:ems="10"
                 android:hint="@string/age_hint"
-                android:inputType="text"
+                android:inputType="number"
                 android:paddingStart="10dp"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
@@ -130,10 +130,10 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegAge" />
 
             <EditText
-                android:id="@+id/editTextText5"
+                android:id="@+id/TourRegCountry"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -157,10 +157,10 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegCountry" />
 
             <EditText
-                android:id="@+id/editTextText6"
+                android:id="@+id/TourRegPass"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -184,10 +184,10 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegPass" />
 
             <EditText
-                android:id="@+id/editTextText7"
+                android:id="@+id/TourRegConact"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -195,7 +195,7 @@
                 android:background="@drawable/form_squre"
                 android:ems="10"
                 android:hint="@string/contact_hint"
-                android:inputType="text"
+                android:inputType="phone"
                 android:paddingStart="10dp"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
@@ -211,10 +211,10 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText7" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegConact" />
 
             <EditText
-                android:id="@+id/editTextText8"
+                android:id="@+id/TourRegEmail"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -222,7 +222,7 @@
                 android:background="@drawable/form_squre"
                 android:ems="10"
                 android:hint="@string/sample_email"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:paddingStart="10dp"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
@@ -238,10 +238,10 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegEmail" />
 
             <EditText
-                android:id="@+id/editTextText9"
+                android:id="@+id/TourRegPassword"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -249,7 +249,7 @@
                 android:background="@drawable/form_squre"
                 android:ems="10"
                 android:hint="@string/sample_password"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:paddingStart="10dp"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
@@ -265,10 +265,10 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText9" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegPassword" />
 
             <EditText
-                android:id="@+id/editTextText31"
+                android:id="@+id/TourRegConPaas"
                 android:layout_width="@dimen/reg_form_width"
                 android:layout_height="@dimen/reg_form_hight"
                 android:layout_marginStart="64dp"
@@ -276,14 +276,14 @@
                 android:background="@drawable/form_squre"
                 android:ems="10"
                 android:hint="@string/sample_password"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:paddingStart="10dp"
                 android:textSize="@dimen/regular"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnSignUp"
                 android:layout_width="150dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="52dp"
@@ -295,7 +295,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.517"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextText31" />
+                app:layout_constraintTop_toBottomOf="@+id/TourRegConPaas" />
 
             <TextView
                 android:id="@+id/textView32"
@@ -308,7 +308,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+                app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
 
             <TextView
                 android:id="@+id/textView33"
@@ -324,7 +324,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
