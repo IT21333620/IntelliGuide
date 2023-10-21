@@ -47,6 +47,16 @@
     <string name="TPoliceStation">Allocated Station</string>
     <string name="TPoliceIdHint">XXXXXXXXX</string>
     <string name="TPoliceStationHint">Allocated Station</string>
+
+
+    <!-- Ai ChatBot -->
+    <string name="destinationTitle">Destination Interactions</string>
+    <string name="arrived">You Arrived at </string>
+    <string name="Rate_destination">Rate Destination</string>
+    <string name="askQuestions">Ask Questions from AI</string>
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
