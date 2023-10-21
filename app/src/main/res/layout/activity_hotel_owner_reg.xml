@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.HotelOwnerReg">
+
+  <ImageView
+      android:id="@+id/hotelOwnerRegImg1"
+      android:layout_width="425dp"
+      android:layout_height="92dp"
+      android:layout_marginStart="-1dp"
+      android:layout_marginTop="-19dp"
+      android:rotation="1"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/vector_1" />
+
+  <ImageView
+      android:id="@+id/hotelOwnerRegImg2"
+      android:layout_width="433dp"
+      android:layout_height="91dp"
+      android:layout_marginStart="-1dp"
+      android:layout_marginBottom="-19dp"
+      android:rotation="181"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:srcCompat="@drawable/vector_1" />
+
+  <ScrollView
+      android:layout_width="413dp"
+      android:layout_height="610dp"
+      android:layout_marginTop="72dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="28dp"
+          android:text="@string/register"
+          android:textColor="@color/TextColor"
+          android:textSize="@dimen/headings"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.469"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTitle1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="32dp"
+          android:layout_marginEnd="84dp"
+          android:text="@string/HotelOwnerRegTitle"
+          android:textColor="@color/black"
+          android:textSize="24sp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTitle" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="100dp"
+          android:text="@string/name"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTitle" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText1"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/name_hint"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView1" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/age"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText1" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText2"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/age_hint"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView2" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/country"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText2" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText3"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/country_hint"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView3" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView4"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/pass_no"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText3" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText4"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/pass_hint"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView4" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/contact_no"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText4" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText5"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/contact_hint"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView5" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView6"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/email"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText5" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText6"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/sample_email"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView6" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView7"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/password"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText6" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText7"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/sample_password"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView7" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView8"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/confirm_pass"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText7" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegEditText8"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/sample_password"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView8" />
+
+      <Button
+          android:id="@+id/hotelOwnerRegButton1"
+          android:layout_width="150dp"
+          android:layout_height="55dp"
+          android:layout_marginTop="52dp"
+          android:background="@drawable/btn_yellow"
+          android:text="@string/singup"
+          android:textColor="@color/TextColor"
+          android:textSize="@dimen/button_heading"
+          app:circularflow_radiusInDP="10dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.517"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText8" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView9"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="32dp"
+          android:text="@string/or"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegButton1" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegTextView10"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="32dp"
+          android:text="@string/have_account"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView9" />
+
+      <Button
+          android:id="@+id/hotelOwnerRegButton2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="32dp"
+          android:background="@drawable/btn_blue"
+          android:backgroundTint="@color/TextColor"
+          android:text="@string/signin"
+          android:textColor="@color/btn_yellow"
+          android:textSize="@dimen/regular"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.498"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView10" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
