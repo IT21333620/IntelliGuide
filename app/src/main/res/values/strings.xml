@@ -36,10 +36,17 @@
     <string name="contact_no">Contact Number</string>
     <string name="contact_hint">+94714563778</string>
     <string name="have_account">Have a Account</string>
-    <string name="HotelOwnerRegTitle">Hotel Owner</string>
     <string name="TPoliceRegTitle">Tourist Police</string>
 
     <!--Hotel Owner-->
+    <!--Hotel Owner Registration-->
+    <string name="HotelOwnerRegTitle">Hotel Owner</string>
+    <string name="HotelOwnerRegHotelName">Hotel Name</string>
+    <string name="HotelOwnerRegHotelNameHint">Beach Inns Hotel</string>
+    <string name="HotelOwnerRegHotelAddress">Hotel Address</string>
+    <string name="HotelOwnerRegHotelAddressHint">Beach Inns, Beach Rd, Matara</string>
+
+    <!--Hotel Owner Add Ads-->
     <string name="HotelOwnerAdSuccess">Ad Successfully Added</string>
 
     <!--Tourist Police-->
@@ -54,7 +61,6 @@
     <string name="arrived">You Arrived at </string>
     <string name="Rate_destination">Rate Destination</string>
     <string name="askQuestions">Ask Questions from AI</string>
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
