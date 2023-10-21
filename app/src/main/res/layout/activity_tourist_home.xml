@@ -79,7 +79,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
-        android:name="com.example.intelliguide.tourist.scams_view"
+        android:name="com.example.intelliguide.tourist.fragments.socialMedia"
         android:layout_width="408dp"
         android:layout_height="880dp"
         app:layout_constraintBottom_toTopOf="@+id/imgbar"
