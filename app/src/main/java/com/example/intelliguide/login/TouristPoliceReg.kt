@@ -14,6 +14,7 @@ import com.example.intelliguide.tourist.tourist_home
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class TouristPoliceReg : AppCompatActivity() {
@@ -30,12 +31,15 @@ class TouristPoliceReg : AppCompatActivity() {
     private lateinit var reSignin: Button
     private lateinit var auth: FirebaseAuth
     private lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef2: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tourist_police_reg)
 
         auth = Firebase.auth
+        dbRef = FirebaseDatabase.getInstance().getReference("userModel")
+        dbRef2 = FirebaseDatabase.getInstance().getReference("policeModel")
 
         nameET = findViewById(R.id.touristPoliceRegEditText1)
         policeIdET =  findViewById(R.id.touristPoliceRegEditText2)
@@ -129,7 +133,7 @@ class TouristPoliceReg : AppCompatActivity() {
                                         .show()
                                 }
 
-                            dbRef.child(userId).setValue(policeModel)
+                            dbRef2.child(userId).setValue(policeModel)
                                 .addOnCompleteListener {
                                     Toast.makeText(
                                         this,
