@@ -15,6 +15,7 @@ import com.example.intelliguide.tourist.tourist_home
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class touristReg : AppCompatActivity() {
@@ -33,12 +34,14 @@ class touristReg : AppCompatActivity() {
     private lateinit var reSignin: Button
     private lateinit var auth: FirebaseAuth
     private lateinit var dbRef: DatabaseReference
+    private lateinit var dbRef2: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tourist_reg)
 
         auth = Firebase.auth
-
+        dbRef = FirebaseDatabase.getInstance().getReference("userModel")
+        dbRef2 = FirebaseDatabase.getInstance().getReference("touristModel")
         nameET = findViewById(R.id.TourRegName)
         ageET =  findViewById(R.id.TourRegAge)
         countryET =  findViewById(R.id.TourRegCountry)
@@ -72,8 +75,8 @@ class touristReg : AppCompatActivity() {
             email = emailET.text.toString()
             age = ageET.text.toString()
             country = countryET.text.toString()
-            passNumber = passNumberET.toString()
-            contact = contactET.toString()
+            passNumber = passNumberET.text.toString()
+            contact = contactET.text.toString()
             password = passwordET.text.toString()
             rePassword = confirmPasswordET.text.toString()
 
@@ -122,14 +125,10 @@ class touristReg : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(
-                                applicationContext,
-                                "Register Sucessfully.",
-                                Toast.LENGTH_SHORT,
-                            ).show()
 
                             val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
                             val type = "Tourist"
+
 
                             val userModel = UserModel(
                                 userId,
@@ -151,7 +150,7 @@ class touristReg : AppCompatActivity() {
                                 }.addOnFailureListener(){ err ->
                                     Toast.makeText(this,"Error ${err.message}",Toast.LENGTH_SHORT).show()
                                 }
-                            dbRef.child(userId).setValue(touristModel)
+                            dbRef2.child(userId).setValue(touristModel)
                                 .addOnCompleteListener{
                                     Toast.makeText(this,"Register Successfully",Toast.LENGTH_SHORT).show()
                                     ageET.setText("")
