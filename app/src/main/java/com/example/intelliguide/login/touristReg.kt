@@ -133,11 +133,11 @@ class touristReg : AppCompatActivity() {
                             val userModel = UserModel(
                                 userId,
                                 type,
-                                name,
 
                             )
 
                             var touristModel = TouristModel(
+                                name,
                                 age,
                                 country,
                                 contact,
@@ -146,13 +146,14 @@ class touristReg : AppCompatActivity() {
 
                             dbRef.child(userId).setValue(userModel)
                                 .addOnCompleteListener{
-                                    nameET.setText("")
+
                                 }.addOnFailureListener(){ err ->
                                     Toast.makeText(this,"Error ${err.message}",Toast.LENGTH_SHORT).show()
                                 }
                             dbRef2.child(userId).setValue(touristModel)
                                 .addOnCompleteListener{
                                     Toast.makeText(this,"Register Successfully",Toast.LENGTH_SHORT).show()
+                                    nameET.setText("")
                                     ageET.setText("")
                                     contactET.setText("")
                                     countryET.setText("")

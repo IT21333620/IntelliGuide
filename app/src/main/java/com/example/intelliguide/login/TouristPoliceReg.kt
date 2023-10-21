@@ -117,17 +117,17 @@ class TouristPoliceReg : AppCompatActivity() {
                             val userModel = UserModel(
                                 userId,
                                 type,
-                                name,
                             )
 
                             var policeModel = PoliceModel(
+                                name,
                                 policeId,
                                 allocatedStation
                             )
 
                             dbRef.child(userId).setValue(userModel)
                                 .addOnCompleteListener {
-                                    nameET.setText("")
+
                                 }.addOnFailureListener() { err ->
                                     Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_SHORT)
                                         .show()
@@ -140,6 +140,7 @@ class TouristPoliceReg : AppCompatActivity() {
                                         "Register Successfully",
                                         Toast.LENGTH_SHORT
                                     ).show()
+                                    nameET.setText("")
                                     policeIdET.setText("")
                                     allocatedStationET.setText("")
                                 }.addOnFailureListener() { err ->
