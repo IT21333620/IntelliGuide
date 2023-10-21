@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".hotelOwner.HotelHome"
+            android:exported="false" />
+        <activity
             android:name=".login.TouristPoliceReg"
             android:exported="false" />
         <activity
@@ -22,7 +25,8 @@
             android:exported="false" />
         <activity
             android:name=".login.HotelOwnerReg"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".tourist.tourist_home"
             android:exported="false" />
@@ -31,7 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".login.touristReg"
-            android:exported="false" />
+            android:exported="true"></activity>
         <activity
             android:name=".login.startup"
             android:exported="true"
@@ -44,14 +48,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".login.login"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
