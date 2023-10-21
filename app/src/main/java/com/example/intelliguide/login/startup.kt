@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -16,14 +17,14 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class startup : AppCompatActivity() {
-    private lateinit var btnStart: Button
+    private lateinit var btnStart: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_startup)
 
-        btnStart = findViewById<Button>(R.id.btnStart)
+        btnStart = findViewById<ImageView>(R.id.btnStart)
 
         btnStart.setOnClickListener{
             val intent = Intent(this@startup, login::class.java)
