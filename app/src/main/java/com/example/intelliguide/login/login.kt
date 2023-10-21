@@ -25,16 +25,6 @@ private lateinit var dbRef: DatabaseReference
 
 class login : AppCompatActivity() {
 
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            val intent = Intent(this@login, MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)

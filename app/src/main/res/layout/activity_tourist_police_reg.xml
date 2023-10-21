@@ -30,8 +30,8 @@
         app:srcCompat="@drawable/vector_1" />
 
     <ScrollView
-        android:layout_width="413dp"
-        android:layout_height="610dp"
+        android:layout_width="409dp"
+        android:layout_height="781dp"
         android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/touristPoliceRegTitle"
