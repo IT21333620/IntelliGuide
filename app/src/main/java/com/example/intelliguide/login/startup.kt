@@ -17,14 +17,14 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class startup : AppCompatActivity() {
-    private lateinit var btnStart: ImageButton
+    private lateinit var btnStart: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_startup)
 
-        btnStart = findViewById<ImageButton>(R.id.btnStart)
+        btnStart = findViewById<ImageView>(R.id.btnStart)
 
         btnStart.setOnClickListener{
             val intent = Intent(this@startup, login::class.java)
