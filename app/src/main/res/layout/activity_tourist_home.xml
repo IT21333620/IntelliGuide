@@ -7,7 +7,7 @@
     tools:context=".tourist.tourist_home">
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/imgbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-43dp"
@@ -18,17 +18,17 @@
         app:srcCompat="@drawable/nav_bar" />
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/imgSocial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="@+id/imgbar"
         app:srcCompat="@drawable/unselected_social_icon" />
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/imgDestination"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="86dp"
@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/unselected_location_icon" />
 
     <ImageView
-        android:id="@+id/imageView21"
+        android:id="@+id/imgResturant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
@@ -48,7 +48,7 @@
         app:srcCompat="@drawable/unselected_food" />
 
     <ImageView
-        android:id="@+id/imageView22"
+        android:id="@+id/imgChatBot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="226dp"
@@ -58,7 +58,7 @@
         app:srcCompat="@drawable/unselected_chat_icon" />
 
     <ImageView
-        android:id="@+id/imageView23"
+        android:id="@+id/imgAlert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="296dp"
@@ -68,7 +68,7 @@
         app:srcCompat="@drawable/unselected_alert_icon" />
 
     <ImageView
-        android:id="@+id/imageView24"
+        android:id="@+id/imgProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -79,10 +79,10 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
-        android:name="com.example.intelliguide.tourist.scams_view"
+        android:name="com.example.intelliguide.tourist.fragments.socialMedia"
         android:layout_width="408dp"
         android:layout_height="880dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView15"
+        app:layout_constraintBottom_toTopOf="@+id/imgbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
