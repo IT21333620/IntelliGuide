@@ -180,7 +180,17 @@ class touristReg : AppCompatActivity() {
 
                         }
                     }
-            } else {
+                nameET.text.clear()
+                ageET.text.clear()
+                countryET.text.clear()
+                passNumberET.text.clear()
+                contactET.text.clear()
+
+                emailET.text.clear()
+                passwordET.text.clear()
+                confirmPasswordET.text.clear()
+            }
+            else {
                 // passwords don't match
                 Toast.makeText(
                     baseContext,

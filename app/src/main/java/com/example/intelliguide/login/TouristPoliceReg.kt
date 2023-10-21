@@ -160,6 +160,13 @@ class TouristPoliceReg : AppCompatActivity() {
                             ).show()
 
                         }
+                        nameET.text.clear()
+                        policeIdET.text.clear()
+                        allocatedStationET.text.clear()
+
+                        emailET.text.clear()
+                        passwordET.text.clear()
+                        confirmPasswordET.text.clear()
                     }
                     } else {
                         // passwords don't match
