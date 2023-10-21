@@ -10,13 +10,17 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.intelliguide.MainActivity
 import com.example.intelliguide.R
+import com.example.intelliguide.tourist.tourist_home
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 
-private lateinit var editTextEmail: EditText
+private lateinit var enterEmail: EditText
 private lateinit var enterPassword: EditText
 private lateinit var btnregister: TextView
 private lateinit var loSignin: Button
@@ -29,9 +33,8 @@ class login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        auth = Firebase.auth
-
-        editTextEmail = findViewById<EditText>(R.id.loginEmail)
+        auth = FirebaseAuth.getInstance()
+        enterEmail = findViewById<EditText>(R.id.loginEmail)
         enterPassword = findViewById<EditText>(R.id.TourRegAge)
         btnregister = findViewById<Button>(R.id.btnSignIn)
         loSignin = findViewById<Button>(R.id.btnSignUp)
@@ -46,7 +49,7 @@ class login : AppCompatActivity() {
             var email: String = ""
             var password: String = ""
 
-            email = editTextEmail.text.toString()
+            email = enterEmail.text.toString()
             password = enterPassword.text.toString()
 
             if (TextUtils.isEmpty(email)) {
@@ -63,33 +66,55 @@ class login : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-
-                        Toast.makeText(
-                            applicationContext,
-                            "Authentication Pass.",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-
+                        // Authentication successful
                         val currentUser = FirebaseAuth.getInstance().currentUser
                         val userId = currentUser?.uid ?: ""
 
+                        // Query to get the user's type
                         val query = FirebaseDatabase.getInstance().getReference("userModel")
                             .orderByChild("userId")
                             .equalTo(userId)
 
+                        query.addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onDataChange(snapshot: DataSnapshot) {
+                                if (snapshot.exists()) {
+                                    // Assuming there's only one matching record
+                                    for (childSnapshot in snapshot.children) {
+                                        val userType = childSnapshot.child("type").getValue(String::class.java)
+                                        // Check the user's type and navigate accordingly
+                                        when (userType) {
+                                            "Tourist" -> {
+                                                val intent = Intent(this@login, tourist_home::class.java)
+                                                startActivity(intent)
+                                                Toast.makeText(baseContext, "Logged in as Tourist.", Toast.LENGTH_SHORT).show()
+                                            }
+                                            "Hotel Owner" -> {
+                                                val intent = Intent(this@login, startup::class.java)
+                                                startActivity(intent)
+                                                Toast.makeText(baseContext, "Logged in as Hotel Owner.", Toast.LENGTH_SHORT).show()
+                                            }
+                                            "Tourist Police" -> {
+                                                val intent = Intent(this@login, startup::class.java)
+                                                startActivity(intent)
+                                                Toast.makeText(baseContext, "Logged in as Tourist Police.", Toast.LENGTH_SHORT).show()
+                                            }
+                                            else -> {
+                                                Toast.makeText(baseContext, "User Not Found", Toast.LENGTH_SHORT).show()
+                                            }
+                                        }
+                                    }
+                                    enterEmail.text.clear()
+                                    enterPassword.text.clear()
+                                }
+                            }
 
-
-                        val intent = Intent(this@login, MainActivity::class.java)
-                        startActivity(intent)
+                            override fun onCancelled(error: DatabaseError) {
+                                // Handle errors, if any
+                            }
+                        })
                     } else {
-                        // If sign in fails, display a message to the user.
-
-                        Toast.makeText(
-                            baseContext,
-                            "Authentication failed.",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-
+                        // If sign-in fails, display an error message
+                        Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
