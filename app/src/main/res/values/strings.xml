@@ -51,6 +51,7 @@
     <string name="HotelOwnerRegHotelLatitudeHint">79.9727158</string>
 
     <!--Hotel Owner Add Ads-->
+    <!--Hotel Owner Add Ads-->
     <string name="HotelOwnerAdSuccess">Ad Successfully Added</string>
     <string name="HotelOwnerAddAdTitle">Place Your Ad</string>
     <string name="HotelOwnerAddAdName">Ad Name</string>
@@ -59,6 +60,13 @@
     <string name="HotelOwnerAddAdText3">Price: Rs. 250 per week</string>
     <string name="HotelOwnerAddAdText4">Dimensions: 800px * 100px</string>
     <string name="HotelOwnerAddAdText5">Publish</string>
+    <string name="HotelOwnerAddAdPaymentCrdNo">Card Number</string>
+    <string name="HotelOwnerAddAdPaymentCrdNoHint">XXXX-XXXX-XXXX-XXXX</string>
+    <string name="HotelOwnerAddAdPaymentExpDate">Expiry Date</string>
+    <string name="HotelOwnerAddAdPaymentExpDateHint">09/28</string>
+    <string name="HotelOwnerAddAdPaymentCVV">CVV</string>
+    <string name="HotelOwnerAddAdPaymentCVVHint">XXX</string>
+    <string name="HotelOwnerAddAdPaymentBtn">Pay</string>
 
     <!--Tourist Police-->
     <string name="TPoliceId">Police ID</string>
