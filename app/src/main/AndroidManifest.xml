@@ -19,7 +19,8 @@
 
         <activity
             android:name=".hotelOwner.HotelAdPayment"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
         <activity
             android:name=".hotelOwner.HotelAddAds"
             android:exported="true">
