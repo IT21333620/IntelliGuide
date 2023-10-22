@@ -46,4 +46,23 @@
         app:layout_constraintBottom_toTopOf="@+id/AlertDel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/remainingTimeTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="90dp"
+        android:text="Button will be disabled in 30 seconds"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/TextColor"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlertMis" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
