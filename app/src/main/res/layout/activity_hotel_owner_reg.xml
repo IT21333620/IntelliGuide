@@ -176,6 +176,60 @@
           app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegTextView5" />
 
       <TextView
+          android:id="@+id/hotelOwnerRegLongitudeTV"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/HotelOwnerRegHotelLongitude"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText5" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegLongitudeET"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/HotelOwnerRegHotelLongitudeHint"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegLongitudeTV" />
+
+      <TextView
+          android:id="@+id/hotelOwnerRegLatitudeTV"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:text="@string/HotelOwnerRegHotelLatitude"
+          android:textColor="@color/black"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegLongitudeET" />
+
+      <EditText
+          android:id="@+id/hotelOwnerRegLatitudeET"
+          android:layout_width="@dimen/reg_form_width"
+          android:layout_height="@dimen/reg_form_hight"
+          android:layout_marginStart="64dp"
+          android:layout_marginTop="24dp"
+          android:background="@drawable/form_squre"
+          android:ems="10"
+          android:hint="@string/HotelOwnerRegHotelLatitudeHint"
+          android:inputType="text"
+          android:paddingStart="10dp"
+          android:textSize="@dimen/regular"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegLatitudeTV" />
+
+      <TextView
           android:id="@+id/hotelOwnerRegTextView6"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -185,7 +239,7 @@
           android:textColor="@color/black"
           android:textSize="@dimen/regular"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegEditText5" />
+          app:layout_constraintTop_toBottomOf="@+id/hotelOwnerRegLatitudeET" />
 
       <EditText
           android:id="@+id/hotelOwnerRegEditText6"
