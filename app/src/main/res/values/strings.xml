@@ -77,6 +77,12 @@
     <!-- Tourist -->
     <string name="TouristAddScams">Add Scams</string>
     <string name="TouristAddPlace">Add New Places</string>
+    <string name="TouristProfileTitle">Tourist</string>
+    <string name="TouristProfileCName">Country: </string>
+    <string name="TouristProfilePass">Passport Number:  </string>
+    <string name="TouristProfileAge">Age:  </string>
+    <string name="TouristProfilebtn">Saved</string>
+    <string name="TouristProfileBtn2">My Posts</string>
 
     <!-- Ai ChatBot -->
     <string name="destinationTitle">Destination Interactions</string>
