@@ -38,11 +38,37 @@
     <string name="contact_no">Contact Number</string>
     <string name="contact_hint">+94714563778</string>
     <string name="have_account">Have a Account</string>
-    <string name="HotelOwnerRegTitle">Hotel Owner</string>
     <string name="TPoliceRegTitle">Tourist Police</string>
 
     <!--Hotel Owner-->
+    <!--Hotel Owner Registration-->
+    <string name="HotelOwnerRegTitle">Hotel Owner</string>
+    <string name="HotelOwnerRegHotelName">Hotel Name</string>
+    <string name="HotelOwnerRegHotelNameHint">Beach Inns Hotel</string>
+    <string name="HotelOwnerRegHotelAddress">Hotel Address</string>
+    <string name="HotelOwnerRegHotelAddressHint">Beach Inns, Beach Rd, Matara</string>
+    <string name="HotelOwnerRegHotelLongitude">Longitude Coordinates</string>
+    <string name="HotelOwnerRegHotelLongitudeHint">6.9264384</string>
+    <string name="HotelOwnerRegHotelLatitude">Latitude Coordinates</string>
+    <string name="HotelOwnerRegHotelLatitudeHint">79.9727158</string>
+
+    <!--Hotel Owner Add Ads-->
+    <!--Hotel Owner Add Ads-->
     <string name="HotelOwnerAdSuccess">Ad Successfully Added</string>
+    <string name="HotelOwnerAddAdTitle">Place Your Ad</string>
+    <string name="HotelOwnerAddAdName">Ad Name</string>
+    <string name="HotelOwnerAddAdText1">Image:</string>
+    <string name="HotelOwnerAddAdText2">Select Image</string>
+    <string name="HotelOwnerAddAdText3">Price: Rs. 250 per week</string>
+    <string name="HotelOwnerAddAdText4">Dimensions: 800px * 100px</string>
+    <string name="HotelOwnerAddAdText5">Publish</string>
+    <string name="HotelOwnerAddAdPaymentCrdNo">Card Number</string>
+    <string name="HotelOwnerAddAdPaymentCrdNoHint">XXXX-XXXX-XXXX-XXXX</string>
+    <string name="HotelOwnerAddAdPaymentExpDate">Expiry Date</string>
+    <string name="HotelOwnerAddAdPaymentExpDateHint">09/28</string>
+    <string name="HotelOwnerAddAdPaymentCVV">CVV</string>
+    <string name="HotelOwnerAddAdPaymentCVVHint">XXX</string>
+    <string name="HotelOwnerAddAdPaymentBtn">Pay</string>
 
     <!--Tourist Police-->
     <string name="TPoliceId">Police ID</string>
@@ -50,13 +76,21 @@
     <string name="TPoliceIdHint">XXXXXXXXX</string>
     <string name="TPoliceStationHint">Allocated Station</string>
 
+    <!-- Tourist -->
+    <string name="TouristAddScams">Add Scams</string>
+    <string name="TouristAddPlace">Add New Places</string>
+    <string name="TouristProfileTitle">Tourist</string>
+    <string name="TouristProfileCName">Country: </string>
+    <string name="TouristProfilePass">Passport Number:  </string>
+    <string name="TouristProfileAge">Age:  </string>
+    <string name="TouristProfilebtn">Saved</string>
+    <string name="TouristProfileBtn2">My Posts</string>
 
     <!-- Ai ChatBot -->
     <string name="destinationTitle">Destination Interactions</string>
     <string name="arrived">You Arrived at </string>
     <string name="Rate_destination">Rate Destination</string>
     <string name="askQuestions">Ask Questions from AI</string>
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
