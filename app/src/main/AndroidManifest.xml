@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_fotor_2023092120147"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_fotor_2023092120147"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
 
+        <activity
+            android:name=".hotelOwner.HotelAdPayment"
+            android:exported="false" />
+        <activity
+            android:name=".hotelOwner.HotelAddAds"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".tourist.TouristAdd"
+            android:exported="false" />
+        <activity
+            android:name=".hotelOwner.HotelHome"
+            android:exported="false" />
         <activity
             android:name=".login.TouristPoliceReg"
             android:exported="false" />
@@ -34,7 +47,7 @@
             android:exported="false" />
         <activity
             android:name=".login.touristReg"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".login.startup"
             android:exported="true"
@@ -47,14 +60,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".login.login"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
