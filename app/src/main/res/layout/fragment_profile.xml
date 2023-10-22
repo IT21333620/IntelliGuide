@@ -1,14 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".tourist.fragments.profile">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/touristProfileCont"
+        android:layout_width="451dp"
+        android:layout_height="387dp"
+        android:layout_marginTop="-8dp"
+        android:src="@drawable/tourist_profile_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/touristProfileImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/tourist_user_profile_img"
+        app:layout_constraintEnd_toEndOf="@+id/touristProfileCont"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/touristProfileTV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/TouristProfileTitle"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileTV2" />
+
+    <TextView
+        android:id="@+id/touristProfileTV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileImg" />
+
+    <TextView
+        android:id="@+id/touristProfileTV3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/TouristProfileCName"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileCont" />
+
+    <TextView
+        android:id="@+id/touristProfileTV4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/TouristProfileAge"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileTV3" />
+
+    <TextView
+        android:id="@+id/touristProfileTV5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileCont" />
+
+    <TextView
+        android:id="@+id/touristProfileTV6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/TouristProfilePass"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileTV4" />
+
+
+
+    <TextView
+        android:id="@+id/touristProfileTV7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileTV5" />
+
+    <TextView
+        android:id="@+id/touristProfileTV8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.621"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileTV7" />
+
+    <ImageButton
+        android:id="@+id/touristProfBtnSaved"
+        android:layout_width="157dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/btn_yellow"
+        android:contentDescription="Save Tourist Profile"
+        android:text="Saved"
+        android:textAlignment="textEnd"
+        android:textColor="@color/TextColor"
+        android:textSize="@dimen/button_heading"
+        app:circularflow_radiusInDP="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileTV6" />
+
+    <ImageView
+        android:id="@+id/touristProfileImg2"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:src="@drawable/toursit_profile_saved_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/touristProfBtnSaved"
+        app:layout_constraintStart_toStartOf="@+id/touristProfBtnSaved"
+        app:layout_constraintTop_toTopOf="@+id/touristProfBtnSaved" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="SAVED"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/TextColor"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/touristProfBtnSaved"
+        app:layout_constraintEnd_toEndOf="@+id/touristProfBtnSaved"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/touristProfileImg2"
+        app:layout_constraintTop_toTopOf="@+id/touristProfBtnSaved"
+        app:layout_constraintVertical_bias="0.259" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:background="#d7e5f5"
+        android:contentDescription="lOGOUT"
+        android:src="@drawable/logout_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toEndOf="@+id/touristProfileImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/touristPoliceRegButton1"
+        android:layout_width="150dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/btn_yellow"
+        android:text="@string/TouristProfileBtn2"
+        android:textColor="@color/TextColor"
+        android:textSize="@dimen/button_heading"
+        android:textStyle="bold"
+        app:circularflow_radiusInDP="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristProfileTV6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
