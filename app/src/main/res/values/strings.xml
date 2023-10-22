@@ -1,4 +1,6 @@
 <resources>
+    <!--Google Map Api Key-->
+    <string name="google_map_api_key">AIzaSyAHyfj5ONi_s0pQcau5e0NCzHkkMPFQ7hg</string>
     <!-- Login and Registration -->
     <string name="app_name">IntelliGuide</string>
     <string name="welcome">Welcome to IntelliGuide</string>
