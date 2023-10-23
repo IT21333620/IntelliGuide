@@ -8,21 +8,20 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.intelliguide.R
 
-class socialMedia : Fragment() {
+class TouristAddPostScreen : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_social_media, container, false)
-        //Enter code here
+        var view = inflater.inflate(R.layout.fragment_tourist_add_post_screen, container, false)
 
-        val nextpage = TouristAddPostScreen()
-        var addNewPlace = view.findViewById<Button>(R.id.btnAddPost)
+        val addPost = AddNewPlace()
+        val btnAddPlace = view.findViewById<Button>(R.id.btnAddnewPLace)
 
-        addNewPlace.setOnClickListener{
-            parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2,nextpage)
+        btnAddPlace.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2,addPost)
                 .commit()
         }
         return view

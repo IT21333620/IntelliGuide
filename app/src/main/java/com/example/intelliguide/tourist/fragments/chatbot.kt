@@ -1,5 +1,6 @@
 package com.example.intelliguide.tourist.fragments
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,18 +15,26 @@ import androidx.core.app.ActivityCompat
 import com.example.intelliguide.R
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 
 class chatbot : Fragment() {
 
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private var hasRated = false
+    private lateinit var databaseReference: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         fusedLocationProviderClient =
             LocationServices.getFusedLocationProviderClient(requireContext())
 
+        databaseReference = FirebaseDatabase.getInstance().reference.child("placeUrls")
 
     }
 
@@ -37,12 +46,16 @@ class chatbot : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_chatbot, container, false)
         val chat = chatting()
+        val addPlace = AddNewPlace()
 
         checkLocationPermission()
 
         val btnAskQuestion = view.findViewById<ImageView>(R.id.askQuestions)
-
+        val btnSavePlace = view.findViewById<ImageView>(R.id.btnSavePlace)
         btnAskQuestion.setOnClickListener {
+
+        }
+        btnSavePlace.setOnClickListener {
 
         }
 
@@ -88,52 +101,46 @@ class chatbot : Fragment() {
             return
         }
         task.addOnSuccessListener { userLocation ->
-            // Define a list of locations with their coordinates and names
-            val locations = listOf(
-                LocationInfo(
-                    "Location A",
-                    6.9264449,
-                    79.9727329,
-                    "Description A",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adventuresofjellie.com%2Fsri-lanka%2Fsigiriya&psig=AOvVaw1sxeHWW_13NsO8ujV7jF31&ust=1698039386351000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJig3OT3iIIDFQAAAAAdAAAAABAE"
-                ),
-                LocationInfo(
-                    "Location B",
-                    34.0522,
-                    -118.2437,
-                    "Description B",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.history.com%2Ftopics%2Feuropean-history%2Flondon-england&psig=AOvVaw3Wvu9XnKeAK49zyObcfAZz&ust=1698039419500000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMjLwvT3iIIDFQAAAAAdAAAAABAE"
-                )
-                // Add more locations as needed
-            )
+            databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val locations = mutableListOf<LocationInfo>()
 
-            // Check if user is within 100m of any location
-            val nearbyLocations = locations.filter { location ->
-                calculateDistance(
-                    userLocation.latitude,
-                    userLocation.longitude,
-                    location.latitude,
-                    location.longitude
-                ) <= 100
-            }
+                    for (placeSnapshot in snapshot.children) {
+                        val place = placeSnapshot.getValue(LocationInfo::class.java)
+                        if (place != null) {
+                            locations.add(place)
+                        }
+                    }
 
-            // Display name and description
-            if (nearbyLocations.isNotEmpty()) {
-                val nearestLocation = nearbyLocations.first()
-                view?.findViewById<TextView>(R.id.textView36)?.text = nearestLocation.name
-                view?.findViewById<TextView>(R.id.textView34)?.text = nearestLocation.description
+                    val nearbyLocations = locations.filter { location ->
+                        calculateDistance(
+                            userLocation.latitude,
+                            userLocation.longitude,
+                            location.latitude,
+                            location.longitude
+                        ) <= 100
+                    }
 
-                // Set image
-                val imageView = view?.findViewById<ImageView>(R.id.imageView16)
-                Picasso.get()
-                    .load(nearestLocation.imageUrl)
-                    .placeholder(R.drawable.logo_fotor_2023092120147) // Replace with your placeholder image
-                    .into(imageView)
+                    if (nearbyLocations.isNotEmpty()) {
+                        val nearestLocation = nearbyLocations.first()
+                        view?.findViewById<TextView>(R.id.textView36)?.text = nearestLocation.name
+                        view?.findViewById<TextView>(R.id.textView34)?.text = nearestLocation.description
+
+                        val img = nearestLocation.placeURL
 
 
+                        val imageView = view?.findViewById<ImageView>(R.id.imageView16)
+                        Picasso.get().load(img).placeholder(R.drawable.logo_fotor_2023092120147)
+                            .into(imageView)
+                    }
+                }
 
-            }
+                override fun onCancelled(error: DatabaseError) {
+                    // Handle error
+                }
+            })
         }
+
     }
 
     private fun calculateDistance(
@@ -153,10 +160,12 @@ class chatbot : Fragment() {
     }
 
     data class LocationInfo(
-        val name: String,
-        val latitude: Double,
-        val longitude: Double,
-        val description: String,
-        val imageUrl: String,
+        val name: String = "",
+        val latitude: Double = 0.0,
+        val longitude: Double = 0.0,
+        val description: String = "",
+        val placeURL: String = "",
+        val Added: String = ""
     )
+
 }

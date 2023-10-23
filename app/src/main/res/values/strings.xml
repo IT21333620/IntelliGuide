@@ -80,4 +80,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="AlertMiss">Alerted by mistakenly,no worries,Stop Alert</string>
+    <string name="add_new_place">"Add New Place "</string>
+    <string name="samplePlace">Sigiriya</string>
+    <string name="description">Description</string>
+    <string name="addPost">Add Post</string>
 </resources>
