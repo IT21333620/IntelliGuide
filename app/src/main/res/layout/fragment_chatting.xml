@@ -7,7 +7,7 @@
     tools:context=".tourist.fragments.chatting">
 
     <ImageView
-        android:id="@+id/imageView19"
+        android:id="@+id/btnAddnewPLace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-4dp"
@@ -26,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19">
+        app:layout_constraintTop_toBottomOf="@+id/btnAddnewPLace">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -55,7 +55,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
         android:src="@drawable/backbtn"
-        app:layout_constraintStart_toStartOf="@+id/imageView19"
-        app:layout_constraintTop_toTopOf="@+id/imageView19" />
+        app:layout_constraintStart_toStartOf="@+id/btnAddnewPLace"
+        app:layout_constraintTop_toTopOf="@+id/btnAddnewPLace" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
