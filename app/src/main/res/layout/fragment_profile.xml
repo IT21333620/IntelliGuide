@@ -185,7 +185,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:background="#d7e5f5"
-        android:contentDescription="lOGOUT"
+        android:contentDescription="Logout"
         android:src="@drawable/logout_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.835"

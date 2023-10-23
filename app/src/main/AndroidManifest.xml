@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -24,19 +23,16 @@
 
         <activity
             android:name=".hotelOwner.HotelAdPayment"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".hotelOwner.HotelAddAds"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".tourist.TouristAdd"
             android:exported="false" />
         <activity
             android:name=".hotelOwner.HotelHome"
             android:exported="false" />
-
         <activity
             android:name=".login.TouristPoliceReg"
             android:exported="false" />

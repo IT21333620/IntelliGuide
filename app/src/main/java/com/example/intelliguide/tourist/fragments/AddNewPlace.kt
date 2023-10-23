@@ -144,7 +144,7 @@ class AddNewPlace : Fragment() {
                                 "userId" to uid,
                                 "latitude" to latitude,
                                 "longitude" to longitude,
-                                "Added" to "User",
+                                "Added" to "Place",
                                 "like" to 0
                             )
                             databaseReference.child(key).setValue(dataToSave)
