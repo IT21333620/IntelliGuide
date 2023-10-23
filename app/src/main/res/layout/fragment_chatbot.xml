@@ -56,12 +56,14 @@
 
             <ImageView
                 android:id="@+id/imageView16"
-                android:layout_width="275dp"
-                android:layout_height="200dp"
+                android:layout_width="375dp"
+                android:layout_height="325dp"
                 android:layout_marginTop="32dp"
+                android:adjustViewBounds="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView31"
+                app:circularflow_radiusInDP="10dp"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -114,7 +116,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
             <ImageView
-                android:id="@+id/imageView18"
+                android:id="@+id/btnSavePlace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"

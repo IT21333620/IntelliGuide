@@ -6,5 +6,7 @@
     <dimen name="button_heading">20sp</dimen>
     <dimen name="reg_form_width">300dp</dimen>
     <dimen name="reg_form_hight">50dp</dimen>
+    <dimen name="new_place_img_height">200dp</dimen>
+    <dimen name="new_place_img_width">275dp</dimen>
 
 </resources>
