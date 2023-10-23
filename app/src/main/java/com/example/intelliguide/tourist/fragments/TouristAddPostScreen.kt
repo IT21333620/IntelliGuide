@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import com.example.intelliguide.R
 
 class TouristAddPostScreen : Fragment() {
@@ -18,7 +19,7 @@ class TouristAddPostScreen : Fragment() {
         var view = inflater.inflate(R.layout.fragment_tourist_add_post_screen, container, false)
 
         val addPost = AddNewPlace()
-        val btnAddPlace = view.findViewById<Button>(R.id.btnAddnewPLace)
+        val btnAddPlace = view.findViewById<ImageView>(R.id.btnAddnewPLace)
 
         btnAddPlace.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2,addPost)

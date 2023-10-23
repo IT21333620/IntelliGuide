@@ -24,15 +24,14 @@
                 android:id="@+id/btnAddPost"
                 android:layout_width="147dp"
                 android:layout_height="49dp"
-                android:layout_marginEnd="262dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/btn_yellow"
                 android:text="@string/addPost"
                 android:textColor="@color/TextColor"
                 android:textSize="16sp"
                 app:circularflow_radiusInDP="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
