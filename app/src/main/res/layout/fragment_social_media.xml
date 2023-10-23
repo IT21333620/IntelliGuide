@@ -14,18 +14,19 @@
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btnAddPost"
                 android:layout_width="147dp"
                 android:layout_height="49dp"
-                android:layout_marginTop="64dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="24dp"
                 android:background="@drawable/btn_yellow"
                 android:text="@string/addPost"
                 android:textColor="@color/TextColor"
@@ -33,6 +34,126 @@
                 app:circularflow_radiusInDP="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/TouristSocialScamBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="150dp"
+                android:contentDescription="TSMScams"
+                android:background="#FFFFFF"
+                android:src="@drawable/selected_tourist_socialmdeia"
+                app:layout_constraintEnd_toStartOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/TouristSocialReviewBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="148dp"
+                android:layout_marginEnd="28dp"
+                android:contentDescription="TSMReview"
+                android:background="#FFFFFF"
+                android:src="@drawable/unselected_tourist_socialmdeia"
+                app:layout_constraintEnd_toStartOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/TouristSocialPlaceBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="TSMPlace"
+                android:background="#FFFFFF"
+                android:src="@drawable/unselected_tourist_socialmdeia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddPost" />
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="60dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/tourist_socialmdeia_scams"
+                app:layout_constraintEnd_toEndOf="@+id/TouristSocialScamBtn"
+                app:layout_constraintHorizontal_bias="0.457"
+                app:layout_constraintStart_toStartOf="@+id/TouristSocialScamBtn"
+                app:layout_constraintTop_toTopOf="@+id/TouristSocialScamBtn" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/TouristSocialMediaScams"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/TouristSocialScamBtn"
+                app:layout_constraintEnd_toEndOf="@+id/TouristSocialScamBtn"
+                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintStart_toStartOf="@+id/TouristSocialScamBtn"
+                app:layout_constraintTop_toBottomOf="@+id/imageView24"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/tourist_socialmdeia_reviews"
+                app:layout_constraintEnd_toEndOf="@+id/TouristSocialReviewBtn"
+                app:layout_constraintHorizontal_bias="0.475"
+                app:layout_constraintStart_toStartOf="@+id/TouristSocialReviewBtn"
+                app:layout_constraintTop_toTopOf="@+id/TouristSocialReviewBtn" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TouristSocialMediaReviews"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/TouristSocialReviewBtn"
+                app:layout_constraintEnd_toEndOf="@+id/TouristSocialReviewBtn"
+                app:layout_constraintHorizontal_bias="0.511"
+                app:layout_constraintStart_toStartOf="@+id/TouristSocialReviewBtn"
+                app:layout_constraintTop_toBottomOf="@+id/imageView25"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/tourist_socialmdeia_places"
+                app:layout_constraintEnd_toEndOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintHorizontal_bias="0.527"
+                app:layout_constraintStart_toStartOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintTop_toTopOf="@+id/TouristSocialPlaceBtn" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TouristSocialMediaPlace"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintStart_toStartOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintTop_toBottomOf="@+id/imageView26" />
+
+            <!-- Your existing Button and ImageButtons -->
+
+            <!-- Add a FrameLayout for the fragment container -->
+            <FrameLayout
+                android:id="@+id/fragmentContainerViewSM"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
