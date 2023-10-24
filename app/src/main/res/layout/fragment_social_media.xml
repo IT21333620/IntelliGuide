@@ -25,8 +25,8 @@
                 android:id="@+id/btnAddPost"
                 android:layout_width="147dp"
                 android:layout_height="49dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/btn_yellow"
                 android:text="@string/addPost"
                 android:textColor="@color/TextColor"
@@ -40,12 +40,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="150dp"
-                android:contentDescription="TSMScams"
+                android:layout_marginTop="204dp"
                 android:background="#FFFFFF"
+                android:contentDescription="TSMScams"
                 android:src="@drawable/selected_tourist_socialmdeia"
-                app:layout_constraintEnd_toStartOf="@+id/TouristSocialPlaceBtn"
-                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintEnd_toStartOf="@+id/TouristSocialReviewBtn"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,24 +53,29 @@
                 android:id="@+id/TouristSocialReviewBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="148dp"
-                android:layout_marginEnd="28dp"
-                android:contentDescription="TSMReview"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="204dp"
+                android:layout_marginEnd="16dp"
                 android:background="#FFFFFF"
+                android:contentDescription="TSMReview"
                 android:src="@drawable/unselected_tourist_socialmdeia"
                 app:layout_constraintEnd_toStartOf="@+id/TouristSocialPlaceBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/TouristSocialScamBtn"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/TouristSocialPlaceBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="32dp"
-                android:contentDescription="TSMPlace"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="16dp"
                 android:background="#FFFFFF"
+                android:contentDescription="TSMPlace"
                 android:src="@drawable/unselected_tourist_socialmdeia"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/TouristSocialReviewBtn"
                 app:layout_constraintTop_toBottomOf="@+id/btnAddPost" />
 
             <ImageView
@@ -150,10 +155,10 @@
                 android:id="@+id/fragmentContainerViewSM"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@+id/TouristSocialPlaceBtn"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TouristSocialPlaceBtn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

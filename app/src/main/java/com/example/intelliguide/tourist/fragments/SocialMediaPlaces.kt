@@ -1,5 +1,6 @@
 package com.example.intelliguide.tourist.fragments
 
+import PlaceAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.intelliguide.R
 import com.example.intelliguide.models.Place
-import com.example.intelliguide.tourist.PlaceAdapter
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 
@@ -47,6 +47,7 @@ class SocialMediaPlaces : Fragment() {
                     placeArrayList.clear()
                     for (userSnapshot in snapshot.children) {
                         val place = userSnapshot.getValue(Place::class.java)
+                        place?.id = userSnapshot.key
                         placeArrayList.add(place!!)
                     }
                     userRecyclerview.adapter = PlaceAdapter(placeArrayList)
