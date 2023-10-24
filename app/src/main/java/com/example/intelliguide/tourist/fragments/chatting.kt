@@ -25,7 +25,7 @@ class chatting : Fragment() {
     private lateinit var messageList: List<Message>
     private lateinit var messageAdapter: MessageAdapter
     val client = OkHttpClient()
-    var API_KEY = "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"
+    
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
