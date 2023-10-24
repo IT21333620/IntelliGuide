@@ -17,6 +17,10 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import android.os.Handler
+import android.widget.ImageView
+import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
 
 class profile : Fragment() {
     private lateinit var textViewName: TextView
@@ -25,6 +29,12 @@ class profile : Fragment() {
     private lateinit var textViewPassportNumber: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var dbRef: DatabaseReference
+    private lateinit var imageView: ImageView
+    private lateinit var databaseReference: DatabaseReference
+    private val handler = Handler()
+    private val imageUrls = ArrayList<String>()
+    private var currentImageIndex = 0
+    private val imageInterval = 3000 // 3 seconds
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +45,7 @@ class profile : Fragment() {
         textViewCountry = view.findViewById(R.id.touristProfileTV5)
         textViewAge = view.findViewById(R.id.touristProfileTV7)
         textViewPassportNumber = view.findViewById(R.id.touristProfileTV8)
+        imageView = view.findViewById(R.id.profAdDisplay) // Assuming you have an ImageView in your fragment layout
         auth = FirebaseAuth.getInstance()
 
         // Get the current user's UID
@@ -77,6 +88,29 @@ class profile : Fragment() {
             })
         }
 
+        // Initialize the database reference to the "imageUrls" node.
+        databaseReference = FirebaseDatabase.getInstance().getReference("imageUrls")
+
+        // Add a ValueEventListener to fetch image URLs and store them in the list.
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                imageUrls.clear()
+                for (imageSnapshot in dataSnapshot.children) {
+                    val imageUrl = imageSnapshot.child("imageURL").getValue(String::class.java)
+                    if (imageUrl != null) {
+                        imageUrls.add(imageUrl)
+                    }
+                }
+
+                // Start the image rotation
+                rotateImages()
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle any errors here.
+            }
+        })
+
         val imageButton2: ImageButton = view.findViewById(R.id.imageButton2)
 
         imageButton2.setOnClickListener {
@@ -93,5 +127,15 @@ class profile : Fragment() {
         }
 
         return view
+    }
+
+    private fun rotateImages() {
+        handler.postDelayed({
+            if (imageUrls.isNotEmpty()) {
+                Picasso.get().load(imageUrls[currentImageIndex]).into(imageView)
+                currentImageIndex = (currentImageIndex + 1) % imageUrls.size
+            }
+            rotateImages() // Continue rotating images
+        }, imageInterval.toLong())
     }
 }

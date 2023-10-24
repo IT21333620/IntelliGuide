@@ -140,7 +140,7 @@
         android:id="@+id/touristProfBtnSaved"
         android:layout_width="157dp"
         android:layout_height="66dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/btn_yellow"
         android:contentDescription="Save Tourist Profile"
         android:text="Saved"
@@ -149,7 +149,7 @@
         android:textSize="@dimen/button_heading"
         app:circularflow_radiusInDP="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/touristProfileTV6" />
 
@@ -196,7 +196,7 @@
         android:id="@+id/touristPoliceRegButton1"
         android:layout_width="150dp"
         android:layout_height="67dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/btn_yellow"
         android:text="@string/TouristProfileBtn2"
         android:textColor="@color/TextColor"
@@ -207,5 +207,15 @@
         app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/touristProfileTV6" />
+
+    <ImageView
+        android:id="@+id/profAdDisplay"
+        android:layout_width="427dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/touristPoliceRegButton1"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
