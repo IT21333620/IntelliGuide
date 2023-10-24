@@ -20,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -36,7 +37,7 @@ class restaurants : Fragment(), OnMapReadyCallback {
     private val LOCATION_PERMISSION_REQUEST_CODE = 1
     private val LOCATION_UPDATE_INTERVAL = 60000 // Update location every 60 seconds
     private val LOCATION_UPDATE_DISTANCE = 5.0f
-    private val FILTER_RADIUS_KM = 5.0 // Set the desired radius in kilometers
+    private val FILTER_RADIUS_KM = 2.0 // Set the desired radius in kilometers
 
     private val locationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
@@ -104,6 +105,35 @@ class restaurants : Fragment(), OnMapReadyCallback {
         }
 
         mGoogleMap?.mapType = GoogleMap.MAP_TYPE_NORMAL
+
+        mGoogleMap?.setInfoWindowAdapter(object : GoogleMap.InfoWindowAdapter {
+            override fun getInfoContents(marker: Marker): View? {
+                return null
+            }
+
+
+            override fun getInfoWindow(marker: Marker): View? {
+                Log.d("InfoWindow", "getInfoWindow called")
+
+                val bundle = Bundle()
+                bundle.putString("title", marker.title)
+                bundle.putString("resID", marker.snippet)
+                bundle.putDouble("latitude", marker.position.latitude)
+                bundle.putDouble("longitude", marker.position.longitude)
+
+                // Create the "directions" fragment and pass the data as arguments
+                val resturentFragment = resturentDir()
+                resturentFragment.arguments = bundle
+
+                // Navigate to the "directions" fragment
+                val transaction = parentFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmentContainerView2, resturentFragment)
+                transaction.addToBackStack(null)
+                transaction.commit()
+
+                return view
+            }
+        })
     }
 
     private fun isMarkerWithinRadius(userLocation: Location, markerLocation: Location): Boolean {
@@ -122,6 +152,7 @@ class restaurants : Fragment(), OnMapReadyCallback {
                         val hotelName = childSnapshot.child("hotelName").value.toString()
                         val latitudeStr = childSnapshot.child("latitude").value.toString()
                         val longitudeStr = childSnapshot.child("longitude").value.toString()
+                        val resid = childSnapshot.key
 
                         try {
                             val latitude = latitudeStr.toDouble()
@@ -137,6 +168,7 @@ class restaurants : Fragment(), OnMapReadyCallback {
                                 val markerOptions = MarkerOptions()
                                     .position(hotelLatLng)
                                     .title(hotelName)
+                                    .snippet(resid)
                                 mGoogleMap?.addMarker(markerOptions)
                             }
                         } catch (e: NumberFormatException) {

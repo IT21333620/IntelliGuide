@@ -7,28 +7,11 @@
     tools:context=".tourist.fragments.Directions">
 
     <TextView
-        android:id="@+id/window_title"
-        android:layout_width="332dp"
-        android:layout_height="178dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginEnd="32dp"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/TextColor"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/window_des"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/window_des"
         android:layout_width="380dp"
         android:layout_height="290dp"
         android:layout_marginStart="19dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="98dp"
         android:layout_marginEnd="19dp"
         android:background="@color/Trans_blue"
         android:backgroundTint="@color/form_blue"
@@ -54,7 +37,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/window_des"
         app:layout_constraintVertical_bias="0.0" />
@@ -65,9 +48,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="174dp"
         android:layout_marginEnd="175dp"
-        android:layout_marginBottom="118dp"
+        android:layout_marginBottom="52dp"
         android:src="@drawable/backbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/window_title"
+        android:layout_width="244dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="32dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/TextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

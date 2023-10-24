@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tourist.fragments.resturentDir" >
+
+    <TextView
+        android:id="@+id/res_title"
+        android:layout_width="261dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginEnd="75dp"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/TextColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/res_detail"
+        android:layout_width="381dp"
+        android:layout_height="323dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/form_blue"
+        android:textAlignment="viewStart"
+        android:textColor="@color/TextColor"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/res_title" />
+
+    <Button
+        android:id="@+id/resD"
+        android:layout_width="167dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="139dp"
+        android:backgroundTint="@color/btn_yellow"
+        android:text="@string/Get_resturent_directions"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/TextColor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/res_detail" />
+
+    <ImageView
+        android:id="@+id/resBK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/backbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resD" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
