@@ -79,7 +79,7 @@ class destinations : Fragment(), OnMapReadyCallback {
         // Sigiriya
         val sigiriyaMarker = mGoogleMap?.addMarker(
             MarkerOptions()
-                .position(LatLng(7.9570006, 80.757328))
+                .position(LatLng(7.958757903076211, 80.76028543868748))
                 .title("Sigiriya")
                 .snippet("Sigiriya, also known as the \"" +
                         "Lion Rock,\" is an ancient rock fortress in Sri Lanka, " +
@@ -91,7 +91,7 @@ class destinations : Fragment(), OnMapReadyCallback {
         // Kandy (City)
         val kandyMarker = mGoogleMap?.addMarker(
             MarkerOptions()
-                .position(LatLng(7.214308, 80.6400801))
+                .position(LatLng(7.290627160397717, 80.63470663711085))
                 .title("Kandy")
                 .snippet("Kandy is a city in Sri Lanka known for its cultural and historical significance. " +
                         "It's home to the Temple of the Tooth Relic, a UNESCO World Heritage site, " +
@@ -102,7 +102,7 @@ class destinations : Fragment(), OnMapReadyCallback {
         // Galle (City)
         val galleMarker = mGoogleMap?.addMarker(
             MarkerOptions()
-                .position(LatLng(6.1053673, 80.1520091))
+                .position(LatLng(6.036941585395958, 80.21680236093829))
                 .title("Galle")
                 .snippet("Galle is a historic coastal city in Sri Lanka known for its well-preserved " +
                         "Dutch colonial architecture, pristine beaches, and vibrant cultural scene. " +
@@ -113,7 +113,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Polonnaruwa
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(7.9395357, 81.0003387))
+            .position(LatLng(7.94091194414504, 81.01952886826162))
             .title("Polonnaruwa")
             .snippet("Polonnaruwa, located in Sri Lanka, is a UNESCO World Heritage " +
                     "Site known for its ancient ruins. It was the second capital of the Kingdom of " +
@@ -123,7 +123,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Anuradhapura
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(8.334985, 80.4106096))
+            .position(LatLng(8.312043324359344, 80.4139518352486))
             .title("Anuradhapura")
             .snippet("Anuradhapura is an ancient city in Sri Lanka and a " +
                     "UNESCO World Heritage Site known for its historical and cultural significance. " +
@@ -134,7 +134,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Dambulla Cave Temple
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(7.8566286, 80.6484958))
+            .position(LatLng(7.8550841428603855, 80.65059135300241))
             .title("Dambulla Cave Temple")
             .snippet("The Dambulla Cave Temple, located in Sri Lanka, is a " +
                     "UNESCO World Heritage Site known for its remarkable cave complex, " +
@@ -145,7 +145,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Nuwara Eliya
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(7.012402, 80.7571612))
+            .position(LatLng(6.949660422003951, 80.79090215446433))
             .title("Nuwara Eliya")
             .snippet("Nuwara Eliya, located in the central highlands of " +
                     "Sri Lanka, is often referred to as \"Little England\" due to its cool climate and " +
@@ -155,7 +155,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Yala National Park
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.5709931, 81.5034809))
+            .position(LatLng(6.491635434682699, 81.4262035818245))
             .title("Yala National Park")
             .snippet("Yala National Park, located in Sri Lanka, is renowned for its incredible biodiversity " +
                     "and is the country's most visited national park. It offers a chance to spot diverse wildlife" +
@@ -164,7 +164,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Udawalawe National Park
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.4402968, 80.8904708))
+            .position(LatLng(6.474927284800055, 80.87632972415206))
             .title("Udawalawe National Park")
             .snippet("Udawalawe National Park, located in Sri Lanka, is renowned for its rich biodiversity " +
                     "and as a sanctuary for elephants. It offers a stunning landscape of grasslands, " +
@@ -174,7 +174,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Ella
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.8736058, 81.0489927))
+            .position(LatLng(6.866672332532782, 81.04640283728064))
             .title("Ella")
             .snippet("Ella is a charming town nestled in the highlands of Sri Lanka, renowned for " +
                     "its breathtaking views of lush tea plantations and picturesque landscapes. " +
@@ -184,7 +184,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Adam's Peak (Sri Pada)
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.812125767263268, 80.50626313151622))
+            .position(LatLng(6.810580217289071, 80.499259378818))
             .title("Adam's Peak (Sri Pada)")
             .snippet("Adam's Peak, also known as Sri Pada, is a sacred mountain in Sri Lanka," +
                     " revered by multiple religions. Its iconic conical shape is famous " +
@@ -194,7 +194,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Horton Plains National Park
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.8020628, 80.8073284))
+            .position(LatLng(6.826300258703641, 80.7208964481314))
             .title("Horton Plains National Park")
             .snippet("Horton Plains National Park, located in Sri Lanka, is a protected area known " +
                     "for its stunning landscapes, including World's End, a dramatic escarpment. " +
@@ -204,7 +204,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Bentota
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.251200, 80.0000))
+            .position(LatLng(6.420538723056231, 80.00614663878753))
             .title("Bentota")
             .snippet("Bentota, a coastal town in Sri Lanka, is renowned for its stunning beaches and water sports. " +
                     "Visitors flock to its palm-fringed shores for sun, sand, and vibrant marine life.")
@@ -212,7 +212,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Mirissa
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(5.9493634, 80.4558128))
+            .position(LatLng(5.9484665619295, 80.47124853726244))
             .title("Mirissa")
             .snippet("Mirissa is a picturesque coastal town in Sri Lanka known for its stunning sandy beaches, " +
                     "crystal-clear waters, and vibrant marine life. It's a " +
@@ -222,7 +222,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Hikkaduwa
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.140753, 80.1028181))
+            .position(LatLng(6.1394657871033775, 80.10727254423466))
             .title("Hikkaduwa")
             .snippet("Hikkaduwa is a coastal town in Sri Lanka known for its stunning beaches, " +
                     "vibrant coral reefs, and a popular destination" +
@@ -232,7 +232,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Pinnawala Elephant Orphanage
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(7.300512, 80.3871935))
+            .position(LatLng(7.30103540415975, 80.38885499532408))
             .title("Pinnawala Elephant Orphanage")
             .snippet("Pinnawala Elephant Orphanage is a renowned elephant sanctuary in Sri Lanka. " +
                     "Located near Kandy, it provides a home to rescued and orphaned elephants," +
@@ -242,7 +242,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Trincomalee
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(8.576425, 81.2344952))
+            .position(LatLng(8.57638639896795, 81.23454239794889))
             .title("Trincomalee")
             .snippet("Trincomalee is a coastal city in eastern Sri Lanka known for its " +
                     "stunning natural harbor and pristine beaches. " +
@@ -252,7 +252,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Jaffna
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(9.665093, 80.0093029))
+            .position(LatLng(9.661580325984245, 80.02602314193815))
             .title("Jaffna")
             .snippet("Jaffna is a historic city located in the northern part of Sri Lanka. It is renowned for " +
                     "its cultural significance, vibrant Tamil heritage, " +
@@ -261,7 +261,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Wilpattu National Park
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(8.4106, 80.051))
+            .position(LatLng(8.48234178695569, 80.05040055024816))
             .title("Wilpattu National Park")
             .snippet("Wilpattu National Park is a renowned wildlife sanctuary in Sri Lanka, known for " +
                     "its diverse flora and fauna. It is the largest national park in the country, offering visitors the chance to " +
@@ -271,7 +271,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Galle Face Green (Colombo)
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.924684, 79.8445573))
+            .position(LatLng(6.924240767314324, 79.84494332252767))
             .title("Galle Face Green (Colombo)")
             .snippet("Galle Face Green, located in Colombo, Sri Lanka, is a picturesque ocean-side urban park, offering " +
                     "stunning sea views and a vibrant atmosphere. It's a popular destination for leisurely walks, " +
@@ -280,7 +280,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Ravana Falls
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(6.8411694, 81.0550963))
+            .position(LatLng(6.84130504211211, 81.0547880799749))
             .title("Ravana Falls")
             .snippet("Ravana Falls is a stunning waterfall located in Sri Lanka, near Ella. " +
                     "It is known for its breathtaking 25-meter drop and the surrounding lush greenery, " +
@@ -291,7 +291,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Kaudulla National Park
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(8.1341492, 80.8775612))
+            .position(LatLng(8.11097340827746, 80.88584346649692))
             .title("Kaudulla National Park")
             .snippet("Kaudulla National Park is a wildlife sanctuary located in " +
                     "Sri Lanka known for its diverse range of wildlife, including elephants and various bird species. " +
@@ -301,7 +301,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Negombo
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(7.2094282, 79.833117))
+            .position(LatLng(7.201703371758601, 79.87541450407441))
             .title("Negombo")
             .snippet("Negombo is a coastal city in Sri Lanka known for its beautiful beaches, " +
                     "fishing industry, and vibrant local culture. " +
@@ -310,7 +310,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Polonnaruwa Vatadage
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(7.9473417, 81.0014847))
+            .position(LatLng(7.948183949656866, 81.00121615650382))
             .title("Polonnaruwa Vatadage")
             .snippet("The Polonnaruwa Vatadage is an ancient circular relic house situated in the " +
                     "ancient city of Polonnaruwa, Sri Lanka. This historic structure " +
@@ -320,7 +320,7 @@ class destinations : Fragment(), OnMapReadyCallback {
 
         // Dalada Maligawa (Temple of the Tooth)
         mGoogleMap?.addMarker(MarkerOptions()
-            .position(LatLng(7.29446, 80.641728))
+            .position(LatLng(7.293853759214011, 80.641239164635))
             .title("Dalada Maligawa")
             .snippet("The Dalada Maligawa, also known as the Temple of the Tooth, " +
                     "is a sacred Buddhist temple in Kandy, Sri Lanka. It houses a relic believed to be " +
