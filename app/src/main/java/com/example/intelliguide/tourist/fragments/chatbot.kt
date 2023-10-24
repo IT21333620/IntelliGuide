@@ -2,6 +2,7 @@ package com.example.intelliguide.tourist.fragments
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -27,6 +28,7 @@ class chatbot : Fragment() {
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private var hasRated = false
     private lateinit var databaseReference: DatabaseReference
+    private var userLocation: Location? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,27 +40,20 @@ class chatbot : Fragment() {
 
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_chatbot, container, false)
-        val chat = chatting()
-        val addPlace = AddNewPlace()
 
         checkLocationPermission()
 
-        val btnAskQuestion = view.findViewById<ImageView>(R.id.askQuestions)
         val btnSavePlace = view.findViewById<ImageView>(R.id.btnSavePlace)
-        btnAskQuestion.setOnClickListener {
 
-        }
         btnSavePlace.setOnClickListener {
-
+            // Your btnSavePlace click logic here
         }
-
 
         val ratingBar = view.findViewById<RatingBar>(R.id.ratingBar)
         ratingBar.setOnRatingBarChangeListener { _, rating, _ ->
@@ -100,7 +95,9 @@ class chatbot : Fragment() {
             )
             return
         }
-        task.addOnSuccessListener { userLocation ->
+        task.addOnSuccessListener { location ->
+            userLocation = location
+
             databaseReference.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val locations = mutableListOf<LocationInfo>()
@@ -114,8 +111,8 @@ class chatbot : Fragment() {
 
                     val nearbyLocations = locations.filter { location ->
                         calculateDistance(
-                            userLocation.latitude,
-                            userLocation.longitude,
+                            userLocation?.latitude ?: 0.0,
+                            userLocation?.longitude ?: 0.0,
                             location.latitude,
                             location.longitude
                         ) <= 100
@@ -128,10 +125,33 @@ class chatbot : Fragment() {
 
                         val img = nearestLocation.placeURL
 
-
                         val imageView = view?.findViewById<ImageView>(R.id.imageView16)
                         Picasso.get().load(img).placeholder(R.drawable.logo_fotor_2023092120147)
                             .into(imageView)
+
+                        val btnAskQuestion = view?.findViewById<ImageView>(R.id.askQuestions)
+                        if (nearestLocation.Added == "User") {
+                            // Disable the button
+                            btnAskQuestion?.isEnabled = false
+                            // Show a toast message
+                            Toast.makeText(requireContext(), "Not Available", Toast.LENGTH_SHORT).show()
+                        } else {
+                            // Enable the button
+                            btnAskQuestion?.isEnabled = true
+
+                            btnAskQuestion?.setOnClickListener {
+                                val bundle = Bundle()
+                                bundle.putString("locationName", nearestLocation.name)
+
+                                val chatFragment = chatting()
+                                chatFragment.arguments = bundle
+
+                                parentFragmentManager.beginTransaction()
+                                    .replace(R.id.fragmentContainerView2, chatFragment) // Replace with actual container ID
+                                    .addToBackStack(null)
+                                    .commit()
+                            }
+                        }
                     }
                 }
 
@@ -167,5 +187,4 @@ class chatbot : Fragment() {
         val placeURL: String = "",
         val Added: String = ""
     )
-
 }
