@@ -67,7 +67,7 @@ class login : AppCompatActivity() {
                                     Toast.makeText(baseContext, "Logged in as Tourist Police.", Toast.LENGTH_SHORT).show()
                                 }
                                 else -> {
-                                    Toast.makeText(baseContext, "User Not Found", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(baseContext, "Place Not Found", Toast.LENGTH_SHORT).show()
                                 }
                             }
                         }
@@ -152,7 +152,7 @@ class login : AppCompatActivity() {
                                                 Toast.makeText(baseContext, "Logged in as Tourist Police.", Toast.LENGTH_SHORT).show()
                                             }
                                             else -> {
-                                                Toast.makeText(baseContext, "User Not Found", Toast.LENGTH_SHORT).show()
+                                                Toast.makeText(baseContext, "Place Not Found", Toast.LENGTH_SHORT).show()
                                             }
                                         }
                                     }
