@@ -106,5 +106,6 @@
     <string name="samplePlace">Sigiriya</string>
     <string name="description">Description</string>
     <string name="addPost">Add Post</string>
-
+  
+    <string name="enterQestion">Enter question</string>
 </resources>
