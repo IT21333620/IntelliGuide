@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".tourist.tourist_home">
 
+
     <ImageView
         android:id="@+id/imgbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="-43dp"
+        android:layout_marginBottom="-42dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/nav_bar" />
 
     <ImageView
@@ -26,6 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imgbar"
         app:srcCompat="@drawable/unselected_social_icon" />
+
 
     <ImageView
         android:id="@+id/imgDestination"
@@ -80,11 +84,11 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
         android:name="com.example.intelliguide.tourist.fragments.socialMedia"
-        android:layout_width="408dp"
-        android:layout_height="880dp"
+        android:layout_width="410dp"
+        android:layout_height="910dp"
+        android:layout_marginBottom="-38dp"
         app:layout_constraintBottom_toTopOf="@+id/imgbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

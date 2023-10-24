@@ -85,6 +85,9 @@
     <string name="TouristProfileAge">Age:  </string>
     <string name="TouristProfilebtn">Saved</string>
     <string name="TouristProfileBtn2">My Posts</string>
+    <string name="TouristSocialMediaScams">Scams</string>
+    <string name="TouristSocialMediaReviews">Reviews</string>
+    <string name="TouristSocialMediaPlace">Places</string>
 
     <!-- Ai ChatBot -->
     <string name="destinationTitle">Destination Interactions</string>
@@ -103,5 +106,6 @@
     <string name="samplePlace">Sigiriya</string>
     <string name="description">Description</string>
     <string name="addPost">Add Post</string>
-
+  
+    <string name="enterQestion">Enter question</string>
 </resources>
