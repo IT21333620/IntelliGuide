@@ -11,25 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="29dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backButton"
-        app:srcCompat="@drawable/tourist_add_container" />
-
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nav_back_arrow" />
+        app:srcCompat="@drawable/tourist_add_container" />
 
     <ImageView
         android:id="@+id/btnAddnewPLace"
@@ -91,4 +79,14 @@
         app:layout_constraintEnd_toEndOf="@+id/btnAddnewPLace"
         app:layout_constraintStart_toEndOf="@+id/imageView21"
         app:layout_constraintTop_toTopOf="@+id/btnAddnewPLace" />
+
+    <ImageView
+        android:id="@+id/addPostScreenAdDisplay"
+        android:layout_width="427dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddnewPLace"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
