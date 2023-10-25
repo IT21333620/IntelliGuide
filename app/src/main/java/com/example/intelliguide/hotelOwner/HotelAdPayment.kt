@@ -9,6 +9,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.example.intelliguide.R
 import com.example.intelliguide.models.Payment
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class HotelAdPayment : AppCompatActivity() {
 
@@ -54,11 +56,15 @@ class HotelAdPayment : AppCompatActivity() {
         }
 
         // Validate the expiry date
-        val currentDate = "10/23"
-        if (expiryDate.length != 5 || expiryDate < currentDate) {
-            expDateET.error = "Expiry date must be after $currentDate"
+        // Validate the expiry date
+        val currentDate = SimpleDateFormat("MM/yy", Locale.US).parse("10/23")
+        val inputDate = SimpleDateFormat("MM/yy", Locale.US).parse(expiryDate)
+
+        if (expiryDate.length != 5 || inputDate == null || inputDate.before(currentDate)) {
+            expDateET.error = "Expiry date must be after 10/23"
             return
         }
+
 
         // Extract the month part from the expiry date
         val monthStr = expiryDate.substring(0, 2)
