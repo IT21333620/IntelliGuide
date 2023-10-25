@@ -109,7 +109,10 @@
 
     <string name="enterQestion">Enter question</string>
     <string name="Get_resturent_directions">Get Directions</string>
+    <string name="write_review">Write Review</string>
+    <string name="submit_review">Submit Review</string>
     <string name="ScmName">What kind of Scam Did you experiance</string>
     <string name="ScmTypDes">Explain the scam you faced in detail</string>
     <string name="ScmPstBtn">Post Scam</string>
+
 </resources>
