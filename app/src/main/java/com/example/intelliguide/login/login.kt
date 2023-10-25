@@ -12,7 +12,6 @@ import com.example.intelliguide.MainActivity
 import com.example.intelliguide.R
 import com.example.intelliguide.hotelOwner.HotelHome
 import com.example.intelliguide.tourist.tourist_home
-import com.example.intelliguide.hotelOwner.HotelHome
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
