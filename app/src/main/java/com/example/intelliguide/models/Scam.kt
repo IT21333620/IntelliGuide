@@ -1,5 +1,7 @@
 package com.example.intelliguide.models
 
 data class Scam(
-    var name: String? = null
+    var id: String? = null,
+    var content: String? = null,
+    var title: String? = null
 )

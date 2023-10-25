@@ -76,9 +76,8 @@ class HotelAddAds : AppCompatActivity() {
                 .addOnSuccessListener { taskSnapshot ->
                     taskSnapshot.storage.downloadUrl.addOnSuccessListener { uri ->
                         val imageUrl = uri.toString()
-                        val imageFileName = imageNameEditText.text.toString() // Get the image name from the EditText
+                        val imageFileName = imageNameEditText.text.toString()
 
-                        // Store the image URL and image name in the Realtime Database.
                         val databaseReference = FirebaseDatabase.getInstance().reference.child("imageUrls")
                         val key = databaseReference.push().key
 
@@ -90,6 +89,10 @@ class HotelAddAds : AppCompatActivity() {
                             databaseReference.child(key).setValue(dataToSave)
                             progressDialog.dismiss()
                             Toast.makeText(applicationContext, "Image Uploaded..", Toast.LENGTH_SHORT).show()
+
+                            // Redirect the user to the HotelAdPaymentActivity
+                            val intent = Intent(this, HotelAdPayment::class.java)
+                            startActivity(intent)
                         } else {
                             progressDialog.dismiss()
                             Toast.makeText(applicationContext, "Failed to store image URL.", Toast.LENGTH_SHORT).show()
@@ -103,4 +106,5 @@ class HotelAddAds : AppCompatActivity() {
                 }
         }
     }
+
 }

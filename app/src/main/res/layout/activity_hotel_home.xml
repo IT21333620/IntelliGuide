@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".hotelOwner.HotelHome">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/hotelFragmentContainerView"
+        android:name="com.example.intelliguide.tourist.fragments.socialMedia"
+        android:layout_width="408dp"
+        android:layout_height="880dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imgbar"
         android:layout_width="wrap_content"
@@ -19,7 +29,7 @@
 
 
     <ImageView
-        android:id="@+id/imgSocial"
+        android:id="@+id/imgReviews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -29,7 +39,7 @@
         app:srcCompat="@drawable/unselected_hotel_reviews" />
 
     <ImageView
-        android:id="@+id/imgDestination"
+        android:id="@+id/imgEvents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
@@ -38,7 +48,7 @@
         app:srcCompat="@drawable/unselected_hotel_events" />
 
     <ImageView
-        android:id="@+id/imgChatBot"
+        android:id="@+id/imgMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="236dp"
@@ -47,7 +57,7 @@
         app:srcCompat="@drawable/unselected_hotel_food_menu" />
 
     <ImageView
-        android:id="@+id/imgProfile"
+        android:id="@+id/imgHotelProfile"
         android:layout_width="58dp"
         android:layout_height="53dp"
         android:layout_marginEnd="28dp"

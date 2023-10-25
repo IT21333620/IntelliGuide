@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.intelliguide.MainActivity
 import com.example.intelliguide.R
 import com.example.intelliguide.tourist.tourist_home
+import com.example.intelliguide.hotelOwner.HotelHome
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
@@ -55,7 +56,7 @@ class login : AppCompatActivity() {
                                     Toast.makeText(baseContext, "Logged in as Tourist.", Toast.LENGTH_SHORT).show()
                                 }
                                 "Hotel Owner" -> {
-                                    val intent = Intent(this@login, startup::class.java)
+                                    val intent = Intent(this@login, HotelHome::class.java)
                                     startActivity(intent)
                                     finish()
                                     Toast.makeText(baseContext, "Logged in as Hotel Owner.", Toast.LENGTH_SHORT).show()
