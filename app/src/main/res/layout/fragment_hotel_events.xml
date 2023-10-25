@@ -1,14 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentContainerView2"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".hotelOwner.fragments.HotelEvents">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/hotelAddAdBackArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/nav_back_arrow" />
+
+        <TextView
+            android:id="@+id/hotelAddEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/HotelOwnerAddEventTitle"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/hotelAddAdBackArrow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="409dp"
+            android:layout_height="781dp"
+            android:layout_marginTop="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/hotelAddOrganizerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="80dp"
+                    android:text="Organizer Name"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/hotelAddOrganizerNameET"
+                    android:layout_width="@dimen/reg_form_width"
+                    android:layout_height="@dimen/reg_form_hight"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/form_squre"
+                    android:ems="10"
+                    android:hint="@string/HotelOwnerOrganizerName"
+                    android:inputType="text"
+                    android:paddingStart="10dp"
+                    android:textSize="@dimen/regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.216"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelAddOrganizerName" />
+
+                <TextView
+                    android:id="@+id/hotelAddOrganizerContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Organizer Contact Number"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelAddOrganizerNameET" />
+
+                <EditText
+                    android:id="@+id/hotelAddOrganizerContactET"
+                    android:layout_width="@dimen/reg_form_width"
+                    android:layout_height="@dimen/reg_form_hight"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/form_squre"
+                    android:ems="10"
+                    android:hint="@string/HotelOwnerOrganizerContact"
+                    android:inputType="number"
+                    android:paddingStart="10dp"
+                    android:textSize="@dimen/regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.216"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelAddOrganizerContact" />
+
+                <TextView
+                    android:id="@+id/HotelOwnerEventLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="80dp"
+                    android:text="Location"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelAddOrganizerContactET" />
+
+                <EditText
+                    android:id="@+id/hotelEventLocationET"
+                    android:layout_width="@dimen/reg_form_width"
+                    android:layout_height="@dimen/reg_form_hight"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/form_squre"
+                    android:ems="10"
+                    android:hint="@string/HotelOwnerEventLocation"
+                    android:inputType="text"
+                    android:paddingStart="10dp"
+                    android:textSize="@dimen/regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.216"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/HotelOwnerEventLocation" />
+
+                <TextView
+                    android:id="@+id/hotelEventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Event Date"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelEventLocationET" />
+
+                <EditText
+                    android:id="@+id/hotelEventDateET"
+                    android:layout_width="@dimen/reg_form_width"
+                    android:layout_height="@dimen/reg_form_hight"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/form_squre"
+                    android:ems="10"
+                    android:hint="@string/HotelOwnerEventDate"
+                    android:inputType="date"
+                    android:paddingStart="10dp"
+                    android:textSize="@dimen/regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.216"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelEventDate" />
+
+                <TextView
+                    android:id="@+id/hotelEventTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Event Time"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelEventDateET" />
+
+                <EditText
+                    android:id="@+id/hotelEventTimeET"
+                    android:layout_width="@dimen/reg_form_width"
+                    android:layout_height="@dimen/reg_form_hight"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/form_squre"
+                    android:ems="10"
+                    android:hint="@string/HotelOwnerEventTime"
+                    android:inputType="datetime"
+                    android:paddingStart="10dp"
+                    android:textSize="@dimen/regular"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.216"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelEventTime" />
+
+                <Button
+                    android:id="@+id/hotelAddEventButton"
+                    android:layout_width="147dp"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/btn_yellow"
+                    android:text="Submit"
+                    android:textColor="@color/TextColor"
+                    android:textSize="16sp"
+                    app:circularflow_radiusInDP="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hotelEventTimeET" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

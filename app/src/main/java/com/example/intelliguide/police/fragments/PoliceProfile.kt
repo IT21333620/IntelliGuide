@@ -1,14 +1,14 @@
-package com.example.intelliguide.tourist.fragments
+package com.example.intelliguide.police.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import com.example.intelliguide.R
 import com.example.intelliguide.login.startup
 import com.google.firebase.auth.FirebaseAuth
@@ -18,11 +18,12 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class  profile : Fragment() {
+class PoliceProfile : Fragment() {
+
+    private lateinit var textViewNameTitle: TextView
     private lateinit var textViewName: TextView
-    private lateinit var textViewCountry: TextView
-    private lateinit var textViewAge: TextView
-    private lateinit var textViewPassportNumber: TextView
+    private lateinit var textViewAllocatedStation: TextView
+    private lateinit var textViewPoliceID: TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var dbRef: DatabaseReference
 
@@ -30,11 +31,12 @@ class  profile : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view =  inflater.inflate(R.layout.fragment_profile, container, false)
-        textViewName = view.findViewById(R.id.touristProfileTV2)
-        textViewCountry = view.findViewById(R.id.touristProfileTV5)
-        textViewAge = view.findViewById(R.id.touristProfileTV7)
-        textViewPassportNumber = view.findViewById(R.id.touristProfileTV8)
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_police_profile, container, false)
+        textViewNameTitle = view.findViewById(R.id.touristPoliceNameTV1)
+        textViewName = view.findViewById(R.id.touristPoliceTV2)
+        textViewPoliceID = view.findViewById(R.id.touristPoliceTV3)
+        textViewAllocatedStation = view.findViewById(R.id.touristPoliceTV4)
         auth = FirebaseAuth.getInstance()
 
         // Get the current user's UID
@@ -42,32 +44,33 @@ class  profile : Fragment() {
 
         if (userId != null) {
             // Reference to the user's data in the database
-            dbRef = FirebaseDatabase.getInstance().getReference("touristModel").child(userId)
+            dbRef = FirebaseDatabase.getInstance().getReference("PoliceModel").child(userId)
 
             // Retrieve the user's data and set it to the appropriate text views
             dbRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
+                        val nameTitle = snapshot.child("name").getValue(String::class.java)
                         val name = snapshot.child("name").getValue(String::class.java)
-                        val country = snapshot.child("country").getValue(String::class.java)
-                        val age = snapshot.child("age").getValue(String::class.java)
-                        val passportNumber = snapshot.child("passportNumber").getValue(String::class.java)
+                        val policeID = snapshot.child("policeId").getValue(String::class.java)
+                        val allocatedStation = snapshot.child("allocatedStation").getValue(String::class.java)
+
+                        if (name != null) {
+                            textViewNameTitle.text = nameTitle
+                        }
 
                         if (name != null) {
                             textViewName.text = name
                         }
 
-                        if (country != null) {
-                            textViewCountry.text = country
+                        if (policeID != null) {
+                            textViewPoliceID.text = policeID
                         }
 
-                        if (age != null) {
-                            textViewAge.text = age
+                        if (allocatedStation != null) {
+                            textViewAllocatedStation.text = allocatedStation
                         }
 
-                        if (passportNumber != null) {
-                            textViewPassportNumber.text = passportNumber
-                        }
                     }
                 }
 
@@ -77,9 +80,9 @@ class  profile : Fragment() {
             })
         }
 
-        val imageButton2: ImageButton = view.findViewById(R.id.imageButton2)
+        val logOutBtn: ImageButton = view.findViewById(R.id.touristPoliceRegButton1)
 
-        imageButton2.setOnClickListener {
+        logOutBtn.setOnClickListener {
             // Log out the user
             auth.signOut()
 

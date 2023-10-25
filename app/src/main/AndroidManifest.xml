@@ -22,11 +22,14 @@
             android:value="@string/google_map_api_key" />
 
         <activity
+            android:name=".police.PoliceHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".hotelOwner.HotelAdPayment"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".hotelOwner.HotelAddAds"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".tourist.TouristAdd"
             android:exported="false" />

@@ -52,6 +52,14 @@
     <string name="HotelOwnerRegHotelLatitude">Latitude Coordinates</string>
     <string name="HotelOwnerRegHotelLatitudeHint">79.9727158</string>
 
+    <!--Hotel Owner Add Events-->
+    <string name="HotelOwnerAddEventTitle">Add Event</string>
+    <string name="HotelOwnerOrganizerName">Organizer Name</string>
+    <string name="HotelOwnerOrganizerContact">Contact Number</string>
+    <string name="HotelOwnerEventLocation">Location</string>
+    <string name="HotelOwnerEventDate">DD-MM-YY</string>
+    <string name="HotelOwnerEventTime">00-00</string>
+
     <!--Hotel Owner Add Ads-->
     <!--Hotel Owner Add Ads-->
     <string name="HotelOwnerAdSuccess">Ad Successfully Added</string>
@@ -71,6 +79,10 @@
     <string name="HotelOwnerAddAdPaymentBtn">Pay</string>
 
     <!--Tourist Police-->
+    <string name="TPoliceTitle">Tourist Police</string>
+    <string name="TPoliceName">Name</string>
+    <string name="TPoliceBtn1">View Alert</string>
+    <string name="TPoliceBtn2">Log Out</string>
     <string name="TPoliceId">Police ID</string>
     <string name="TPoliceStation">Allocated Station</string>
     <string name="TPoliceIdHint">XXXXXXXXX</string>
