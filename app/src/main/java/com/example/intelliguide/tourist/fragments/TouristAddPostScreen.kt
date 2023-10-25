@@ -46,6 +46,7 @@ class TouristAddPostScreen : Fragment() {
             parentFragmentManager.beginTransaction().replace(R.id.fragmentContainerView2, addPost)
                 .commit()
         }
+        
         databaseReference = FirebaseDatabase.getInstance().getReference("imageUrls")
 
         // Add a ValueEventListener to fetch image URLs and store them in the list.
@@ -67,6 +68,21 @@ class TouristAddPostScreen : Fragment() {
                 // Handle any errors here.
             }
         })
+
+        val btnAddScam = view.findViewById<ImageView>(R.id.scmAdPst)
+        btnAddScam.setOnClickListener{
+
+            val fragment = AddScamPost()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction()
+                .replace(
+                    R.id.fragmentContainerView2,
+                    fragment
+                )
+                .addToBackStack(null)
+                .commit()
+        }
+
 
         return view
     }
