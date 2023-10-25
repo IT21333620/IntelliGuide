@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/SocialMediaScamTV1"
+            android:id="@+id/SocialMediaReviewTV1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -25,17 +25,37 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
-
         <TextView
-            android:id="@+id/SocialMediaScamTV2"
-            android:layout_width="361dp"
+            android:id="@+id/SocialMediaReviewTV2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="10dp"
             android:text="TextView"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/SocialMediaReviewTV3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/tourist_rating_icon" />
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

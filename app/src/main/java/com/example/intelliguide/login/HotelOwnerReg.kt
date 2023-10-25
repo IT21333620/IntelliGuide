@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.intelliguide.R
+import com.example.intelliguide.hotelOwner.HotelHome
 import com.example.intelliguide.models.HotelOwnerModel
 import com.example.intelliguide.models.UserModel
 import com.example.intelliguide.tourist.tourist_home
@@ -86,49 +87,48 @@ class HotelOwnerReg : AppCompatActivity() {
 
             if(TextUtils.isEmpty(email)){
                 Toast.makeText(this@HotelOwnerReg, "Enter Email", Toast.LENGTH_SHORT).show()
-                //return
-
             }
-            if(TextUtils.isEmpty(name)){
+
+            else if (!email.contains("@")) {
+                Toast.makeText(this@HotelOwnerReg, "Invalid email format", Toast.LENGTH_SHORT).show()
+            }
+
+            else if(TextUtils.isEmpty(name)){
                 Toast.makeText(this@HotelOwnerReg, "Enter Name", Toast.LENGTH_SHORT).show()
-                //return
-
             }
-            if(TextUtils.isEmpty(age)){
+            else if(TextUtils.isEmpty(age)){
                 Toast.makeText(this@HotelOwnerReg, "Enter Age", Toast.LENGTH_SHORT).show()
-                //return
-
             }
-            if(TextUtils.isEmpty(hotelName)){
+            else if(!age.matches(Regex("^[0-9.+-]+$"))) {
+                Toast.makeText(this@HotelOwnerReg, "Invalid Age Value", Toast.LENGTH_SHORT).show()
+            }
+            else if(TextUtils.isEmpty(hotelName)){
                 Toast.makeText(this@HotelOwnerReg, "Enter Hotel Name", Toast.LENGTH_SHORT).show()
-                //return
-
             }
-            if(TextUtils.isEmpty(hotelAddress)){
+            else if(TextUtils.isEmpty(hotelAddress)){
                 Toast.makeText(this@HotelOwnerReg, "Enter Hotel Address", Toast.LENGTH_SHORT).show()
-
             }
-            if(TextUtils.isEmpty(longitude)){
+            else if(TextUtils.isEmpty(longitude)){
                 Toast.makeText(this@HotelOwnerReg, "Enter longitude value", Toast.LENGTH_SHORT).show()
-                //return
-
             }
-            if(TextUtils.isEmpty(latitude)){
+            else if(!longitude.matches(Regex("^[0-9.+-]+$"))) {
+                Toast.makeText(this@HotelOwnerReg, "Invalid longitude coordinate", Toast.LENGTH_SHORT).show()
+            }
+            else if(TextUtils.isEmpty(latitude)){
                 Toast.makeText(this@HotelOwnerReg, "Enter latitude value", Toast.LENGTH_SHORT).show()
-                //return
-
             }
-            if(TextUtils.isEmpty(password)){
+            else if(!latitude.matches(Regex("^[0-9.+-]+$"))) {
+                Toast.makeText(this@HotelOwnerReg, "Invalid latitude coordinate", Toast.LENGTH_SHORT).show()
+            }
+            else if(TextUtils.isEmpty(password)){
                 Toast.makeText(this@HotelOwnerReg, "Enter Hotel Address", Toast.LENGTH_SHORT).show()
-
             }
-            if(TextUtils.isEmpty(rePassword)){
+            else if(TextUtils.isEmpty(rePassword)){
                 Toast.makeText(this@HotelOwnerReg, "ReEnter Password", Toast.LENGTH_SHORT).show()
-
             }
 
             if (password == rePassword){
-                //If passwords match
+                //If passwords are matching
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
@@ -178,12 +178,11 @@ class HotelOwnerReg : AppCompatActivity() {
                                         .show()
                                 }
 
-                            //Add the page where you want to redirect after signing up
-                            val intent = Intent(this@HotelOwnerReg, tourist_home::class.java)
+                            //Redirecting the user after sign in is successful
+                            val intent = Intent(this@HotelOwnerReg, HotelHome::class.java)
                             startActivity(intent)
                         } else {
-                            // If sign in fails, display a message to the user.
-
+                            //Display failed message if authentication fails
                             Toast.makeText(
                                 baseContext,
                                 "Authentication failed.",
@@ -200,7 +199,7 @@ class HotelOwnerReg : AppCompatActivity() {
                         confirmPasswordET.text.clear()
                     }
             } else {
-                // passwords don't match
+                //If passwords does not match
                 Toast.makeText(
                     baseContext,
                     "Password do not match.",

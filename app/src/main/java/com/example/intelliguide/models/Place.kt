@@ -5,7 +5,9 @@ data class Place(
     var name: String? = null,
     val placeURL: String? = null,
     val description: String? = null,
-    var like: Int? = null
+    var like: Int? = null,
+    var userId: String? = null,
+
 )
 
 

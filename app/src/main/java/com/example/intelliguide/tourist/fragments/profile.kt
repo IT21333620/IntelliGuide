@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import android.os.Handler
+import android.widget.Button
 import android.widget.ImageView
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
@@ -126,6 +127,18 @@ class profile : Fragment() {
             startActivity(intent)
         }
 
+        val touristPoliceRegButton1: Button = view.findViewById(R.id.touristPoliceRegButton1)
+
+        touristPoliceRegButton1.setOnClickListener {
+            // Replace the current fragment with the "myPosts" fragment
+            val myPostsFragment = myPosts() // Instantiate your "myPosts" fragment
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainerView2, myPostsFragment) // R.id.fragmentContainer should be the ID of the container where you want to display the "myPosts" fragment.
+            transaction.addToBackStack(null) // Add the transaction to the back stack (optional)
+            transaction.commit()
+        }
+
+
         return view
     }
 
@@ -138,4 +151,6 @@ class profile : Fragment() {
             rotateImages() // Continue rotating images
         }, imageInterval.toLong())
     }
+
+
 }
