@@ -42,40 +42,33 @@ class AddScamPost : Fragment() {
             val user = auth.currentUser
             val uid = user?.uid
 
-            // Check if the UID is available
-            if (uid != null) {
-                // Retrieve the title and content from EditText fields
-                val title = Heading.text.toString()
-                val content = Descrip.text.toString()
+            // Check if title and content are not empty
+            val title = Heading.text.toString()
+            val content = Descrip.text.toString()
 
-                // Check if title and content are not empty
-                if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(content)) {
-                    // Create a reference to the "Scams" table under the user's UID
-                    val userScamsRef = dbRef.child(uid).child("Scams")
+            if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(content)) {
+                // Create a reference to the "Scams" table in the database
+                // Generate a unique key for the new entry
+                val newScamKey = dbRef.push().key
 
-                    // Generate a unique key for the new entry
-                    val newScamKey = userScamsRef.push().key
+                // Create a map to store the data, including the UID
+                val scamData = HashMap<String, Any>()
+                scamData["title"] = title
+                scamData["content"] = content
+                // Add the UID to the map
+                scamData["uid"] = uid ?: ""
 
-                    // Create a map to store the data
-                    val scamData = HashMap<String, Any>()
-                    scamData["title"] = title
-                    scamData["content"] = content
+                // Store the data in the database
+                dbRef.child(newScamKey!!).setValue(scamData)
 
-                    // Store the data in the database
-                    userScamsRef.child(newScamKey!!).setValue(scamData)
+                Heading.text.clear()
+                Descrip.text.clear()
 
-                    Heading.text.clear()
-                    Descrip.text.clear()
-
-                    // Display a success message
-                    Toast.makeText(context, "Scam added successfully", Toast.LENGTH_SHORT).show()
-                } else {
-                    // Display an error message if title or content is empty
-                    Toast.makeText(context, "Title and Content must not be empty", Toast.LENGTH_SHORT).show()
-                }
+                // Display a success message
+                Toast.makeText(context, "Scam added successfully", Toast.LENGTH_SHORT).show()
             } else {
-                // Display an error message if the UID is not available
-                Toast.makeText(context, "User not authenticated", Toast.LENGTH_SHORT).show()
+                // Display an error message if title or content is empty
+                Toast.makeText(context, "Title and Content must not be empty", Toast.LENGTH_SHORT).show()
             }
         }
 
