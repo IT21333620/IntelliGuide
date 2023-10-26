@@ -32,6 +32,8 @@ class chatbot : Fragment() {
     private lateinit var databaseReference: DatabaseReference
     private lateinit var resturentRef: DatabaseReference
     private var userLocation: Location? = null
+    private var locationInfo: LocationInfo? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -126,36 +128,41 @@ class chatbot : Fragment() {
             .child("locationTime")
             .child(uid.toString())
 
-        // Check if the user has already saved a location
-        locationTimeRef.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    // User has already saved a location
-                    Toast.makeText(requireContext(), "You have already saved a location", Toast.LENGTH_SHORT).show()
-                } else {
-                    // User hasn't saved a location yet, proceed to save
-                    val currentTime = System.currentTimeMillis()
+        val currentTime = System.currentTimeMillis()
 
-                    val locationTimeMap = mapOf(
-                        "locationName" to locationName,
-                        "timestamp" to currentTime
-                    )
+        val locationTimeMap = mapOf(
+            "locationName" to locationName,
+            "timestamp" to currentTime,
+            "placeURL" to locationInfo?.placeURL
+        )
 
-                    locationTimeRef.setValue(locationTimeMap).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            Toast.makeText(requireContext(), "Location and time saved successfully", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(requireContext(), "Error: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
-                        }
+        // Check if the location with the same placeURL already exists
+        locationTimeRef.orderByChild("placeURL").equalTo(locationInfo?.placeURL)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        // User has already saved this location
+                        Toast.makeText(requireContext(), "You have already saved this location", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // User hasn't saved this location yet, proceed to save
+                        val locationKey = locationTimeRef.push().key // Generate a unique key
+                        locationTimeRef.child(locationKey!!).setValue(locationTimeMap)
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    Toast.makeText(requireContext(), "Location and time saved successfully", Toast.LENGTH_SHORT).show()
+                                } else {
+                                    Toast.makeText(requireContext(), "Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                                }
+                            }
                     }
                 }
-            }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(requireContext(), "Error: ${databaseError.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle error
+                }
+            })
     }
+
 
     private fun checkLocationPermission() {
         val task = fusedLocationProviderClient.lastLocation
@@ -190,6 +197,8 @@ class chatbot : Fragment() {
                         }
                     }
 
+
+
                     val nearbyLocations = locations.filter { location ->
                         calculateDistance(
                             userLocation?.latitude ?: 0.0,
@@ -199,10 +208,13 @@ class chatbot : Fragment() {
                         ) <= 100
                     }
 
+
+
                     if (nearbyLocations.isNotEmpty()) {
                         val nearestLocation = nearbyLocations.first()
                         view?.findViewById<TextView>(R.id.textView36)?.text = nearestLocation.name
                         view?.findViewById<TextView>(R.id.textView34)?.text = nearestLocation.description
+                        locationInfo = nearbyLocations.first()
 
                         val img = nearestLocation.placeURL
 

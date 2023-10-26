@@ -37,6 +37,7 @@ class AddNewPlace : Fragment() {
     private lateinit var destination: EditText
     private lateinit var btnSelect: Button
     private lateinit var btnPublish: Button
+    private lateinit var btnBack: ImageView
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var currentLocation: Location? = null
 
@@ -54,7 +55,14 @@ class AddNewPlace : Fragment() {
         img = view.findViewById(R.id.newPlaceImg)
         btnSelect = view.findViewById(R.id.btnAddPost)
         btnPublish = view.findViewById(R.id.btnPublishNewPlace)
+        btnBack = view.findViewById(R.id.btnBack2)
+        val pSavedPlaces = socialMedia()
 
+        btnBack.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainerView2, pSavedPlaces)
+                .commit()
+        }
 
         btnSelect.setOnClickListener {
             val intent = Intent()
