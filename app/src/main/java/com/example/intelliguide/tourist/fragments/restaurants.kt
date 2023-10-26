@@ -39,6 +39,7 @@ class restaurants : Fragment(), OnMapReadyCallback {
     private val LOCATION_UPDATE_DISTANCE = 5.0f
     private val FILTER_RADIUS_KM = 2.0 // Set the desired radius in kilometers
 
+
     private val locationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
             userLocation = location
