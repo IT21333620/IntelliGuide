@@ -10,7 +10,7 @@ import com.example.intelliguide.hotelOwner.fragments.HotelProfile
 import com.example.intelliguide.hotelOwner.fragments.HotelReviews
 
 class HotelHome : AppCompatActivity() {
-    val fragmentHotelReviews = HotelReviews()
+    val fragmentHotelReviews = HotelProfile()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
