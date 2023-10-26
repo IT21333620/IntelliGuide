@@ -36,9 +36,10 @@ class chatting : Fragment() {
     private lateinit var sendButton: ImageView
     lateinit var messageList:MutableList<Message>
     private lateinit var messageAdapter: MessageAdapter
+    private lateinit var backBtn: ImageView
     val client = OkHttpClient.Builder().readTimeout(60, java.util.concurrent.TimeUnit.SECONDS).build()
-    val API_KEY = "sk-6f2b2-4f2b2-4f2b2-4f2b2-4f2b2" // add a openAi api key here
-
+    // add a openAi api key here
+    val API_KEY = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +50,9 @@ class chatting : Fragment() {
         arguments?.let {
             val locationName = arguments?.getString("locationName")
 
+            val fragment1 = chatbot()
             recyclerView = view.findViewById(R.id.recyclerView)
+            backBtn = view.findViewById(R.id.btnBack)
             messageEditText = view.findViewById(R.id.txtQuestion)
             sendButton = view.findViewById(R.id.btnsend)
             messageList = ArrayList()
@@ -61,6 +64,12 @@ class chatting : Fragment() {
             llm.stackFromEnd = true
             recyclerView.layoutManager = llm
 
+            backBtn.setOnClickListener {
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView2, fragment1)  // Make sure R.id.fragmentContainerViewSM is correct
+                    .commit()
+
+            }
             sendButton.setOnClickListener {
                 val question = messageEditText.text.toString().trim()
                 addToChat(question,Message.SENT_BY_ME)
