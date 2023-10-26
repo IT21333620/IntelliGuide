@@ -190,13 +190,6 @@ class HotelOwnerReg : AppCompatActivity() {
                             ).show()
 
                         }
-                        nameET.text.clear()
-                        ageET.text.clear()
-                        hotelNameET.text.clear()
-                        hotelAddressET.text.clear()
-                        emailET.text.clear()
-                        passwordET.text.clear()
-                        confirmPasswordET.text.clear()
                     }
             } else {
                 //If passwords does not match
