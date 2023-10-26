@@ -10,7 +10,7 @@
         android:id="@+id/touristProfileCont"
         android:layout_width="451dp"
         android:layout_height="387dp"
-        android:layout_marginTop="-8dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/tourist_profile_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"

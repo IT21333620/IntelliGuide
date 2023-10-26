@@ -70,7 +70,7 @@
         tools:text="@string/TouristAddScams" />
 
     <ImageView
-        android:id="@+id/imageView21"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -90,6 +90,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btnAddnewPLace"
         app:layout_constraintEnd_toEndOf="@+id/btnAddnewPLace"
-        app:layout_constraintStart_toEndOf="@+id/imageView21"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
         app:layout_constraintTop_toTopOf="@+id/btnAddnewPLace" />
 </androidx.constraintlayout.widget.ConstraintLayout>

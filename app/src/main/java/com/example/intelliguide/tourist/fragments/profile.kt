@@ -35,6 +35,7 @@ class profile : Fragment() {
     private val imageUrls = ArrayList<String>()
     private var currentImageIndex = 0
     private val imageInterval = 3000 // 3 seconds
+    private  lateinit var savePlace: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +48,15 @@ class profile : Fragment() {
         textViewPassportNumber = view.findViewById(R.id.touristProfileTV8)
         imageView = view.findViewById(R.id.profAdDisplay) // Assuming you have an ImageView in your fragment layout
         auth = FirebaseAuth.getInstance()
+        savePlace = view.findViewById(R.id.touristProfBtnSaved)
+        val fragment1 = SavedPlaces()
+
+
+        savePlace.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2, fragment1)  // Make sure R.id.fragmentContainerViewSM is correct
+                .commit()
+        }
 
         // Get the current user's UID
         val userId = auth.currentUser?.uid
